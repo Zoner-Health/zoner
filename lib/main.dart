@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Zoner',
+        title: 'Sickler',
         debugShowCheckedModeBanner: false,
         theme: ZonerThemeData.lightTheme,
         darkTheme: ZonerThemeData.darkTheme,
