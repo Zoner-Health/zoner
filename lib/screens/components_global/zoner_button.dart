@@ -13,6 +13,8 @@ class ZonerButton extends StatelessWidget {
     this.backgroundColor,
     this.iconPath,
     this.icon,
+    this.trailingIcon,
+    this.trailingIconPath,
     this.overrideIconColor = false,
     this.buttonType = AppButtonType.primary,
     this.isChipButton = false,
@@ -21,7 +23,9 @@ class ZonerButton extends StatelessWidget {
   final String label;
   final AppButtonType buttonType;
   final IconData? icon;
+  final IconData? trailingIcon;
   final String? iconPath;
+  final String? trailingIconPath;
   final Color? color;
   final Color? backgroundColor;
   final bool? overrideIconColor;
@@ -33,6 +37,10 @@ class ZonerButton extends StatelessWidget {
     if (icon != null && iconPath != null) {
       throw ErrorHint(
           "Cannot set both an icon and an iconPath property simultaneously, consider removing one");
+    }
+    if (trailingIcon != null && trailingIconPath != null) {
+      throw ErrorHint(
+          "Cannot set both a trailingIcon and a trailingIconPath property simultaneously, consider removing one");
     }
     if (overrideIconColor == true && color == null) {
       throw ErrorHint(
@@ -71,13 +79,14 @@ class ZonerButton extends StatelessWidget {
         labelColor = color ?? theme.colorScheme.primary;
 
         style = ElevatedButton.styleFrom(
-            fixedSize: isChipButton! ? const Size.fromHeight(36) : null,
-            backgroundColor: Colors.transparent,
-            foregroundColor: color ?? theme.colorScheme.primary,
-            side: BorderSide(
-              width: 1,
-              color: labelColor,
-            ),);
+          fixedSize: isChipButton! ? const Size.fromHeight(36) : null,
+          backgroundColor: Colors.transparent,
+          foregroundColor: color ?? theme.colorScheme.primary,
+          side: BorderSide(
+            width: 1,
+            color: labelColor,
+          ),
+        );
 
         break;
       case AppButtonType.text:
@@ -100,33 +109,47 @@ class ZonerButton extends StatelessWidget {
     }
 
     return ElevatedButton(
-            onPressed: onPressed,
-            style: style,
-            child: Center(
+      onPressed: onPressed,
+      style: style,
+      child: Center(
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Visibility(
+              visible: icon != null || iconPath != null,
               child: Row(
-                mainAxisSize: MainAxisSize.min,
                 children: [
-                  Visibility(
-                    visible: icon != null || iconPath != null,
-                    child: Row(
-                      children: [
-                        icon != null
-                            ? Icon(icon)
-                            : SvgPicture.asset(iconPath ?? "",
-                                colorFilter: ColorFilter.mode(
-                                    labelColor, BlendMode.srcIn)),
-                        const Gap(8)
-                      ],
-                    ),
-                  ),
-                  Text(label,
-                      style: Theme.of(context)
-                          .textTheme
-                          .bodyMedium!
-                          .copyWith(color: labelColor)),
+                  icon != null
+                      ? Icon(icon)
+                      : SvgPicture.asset(iconPath ?? "",
+                          colorFilter:
+                              ColorFilter.mode(labelColor, BlendMode.srcIn)),
+                  const Gap(8)
                 ],
               ),
             ),
-          );
+            Text(label,
+                style: Theme.of(context)
+                    .textTheme
+                    .bodyMedium!
+                    .copyWith(color: labelColor)),
+            Visibility(
+              visible: trailingIcon != null || trailingIconPath != null,
+              child: Row(
+                children: [
+                  const Gap(8),
+                  trailingIcon != null
+                      ? Icon(trailingIcon)
+                      : SvgPicture.asset(trailingIconPath ?? "",
+                      colorFilter:
+                      ColorFilter.mode(labelColor, BlendMode.srcIn)),
+
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
