@@ -51,7 +51,7 @@ class ZonerAppBar extends StatelessWidget {
             child: Text(pageTitle, style: theme.textTheme.displaySmall),
           ),
         ),
-        const Gap( 48),
+        const Gap(32),
       ],
     );
   }
