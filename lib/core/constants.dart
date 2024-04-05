@@ -31,6 +31,7 @@ class ZonerInputDecoration {
           borderSide: BorderSide.none,
           borderRadius: BorderRadius.circular(12),
         ),
+
         focusedBorder: OutlineInputBorder(
           gapPadding: 0,
           borderSide:
@@ -39,9 +40,10 @@ class ZonerInputDecoration {
         ),
         filled: true,
         isDense: true,
-        fillColor: Theme.of(context).cardColor,
-        hintStyle: ZonerTextStyles.bodyMedium
-            .copyWith(color: ZonerColors.neutral50),
+
+        fillColor:  Theme.of(context).cardColor,
+        hintStyle: ZonerTextStyles.bodyMedium.copyWith(color: ZonerColors.neutral50, fontFamily: "Plus Jakarta Sans")
+            ,
         labelStyle:
             ZonerTextStyles.bodyMedium.copyWith(color: ZonerColors.black));
   }
@@ -164,7 +166,6 @@ class ZonerTextStyles {
 
   ///---Headline---///
   static TextStyle headlineLarge = const TextStyle(
-    fontWeight: FontWeight.normal,
     fontSize: 32,
     height: 1,
   );
@@ -174,7 +175,6 @@ class ZonerTextStyles {
     height: 1,
   );
   static TextStyle headlineMedium = const TextStyle(
-    fontFamily: "Gloock",
     fontSize: 28,
     height: 1,
   );
@@ -184,7 +184,6 @@ class ZonerTextStyles {
     height: 1,
   );
   static TextStyle headlineSmall = const TextStyle(
-    fontWeight: FontWeight.normal,
     fontSize: 24,
     height: 1,
   );
@@ -241,7 +240,6 @@ class ZonerTextStyles {
   );
 
   static TextStyle bodyMediumAlt = const TextStyle(
-
     fontSize: 14,
     fontFamily: "Gloock",
   );
