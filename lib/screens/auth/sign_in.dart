@@ -1,7 +1,6 @@
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:zoner/core/constants.dart';
 import 'package:zoner/core/core.dart';
 import 'package:zoner/screens/components_global/components.dart';
 
@@ -28,21 +27,21 @@ class _SignInScreenState extends State<SignInScreen> {
   @override
   Widget build(BuildContext context) {
     final ThemeData theme = Theme.of(context);
-    final bool isDarkMode = theme.brightness == Brightness.dark;
+    // final bool isDarkMode = theme.brightness == Brightness.dark;
     return Scaffold(
       body: Form(
         key: _formKey,
         child: Column(
           children: [
-            ZonerAppBar(pageTitle: "Sign in"),
+            const ZonerAppBar(pageTitle: "Sign in"),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Text("Email"),
-                  Gap(8),
+                  const Text("Email"),
+                  const Gap(8),
                   TextFormField(
                     controller: emailController,
                     keyboardType: TextInputType.emailAddress,
@@ -60,9 +59,9 @@ class _SignInScreenState extends State<SignInScreen> {
                       }
                     },
                   ),
-                  Gap(16),
-                  Text("Password"),
-                  Gap(8),
+                  const Gap(16),
+                  const Text("Password"),
+                  const Gap(8),
                   TextFormField(
                     controller: passwordController,
                     keyboardType: TextInputType.visiblePassword,
@@ -87,7 +86,7 @@ class _SignInScreenState extends State<SignInScreen> {
                       if (value == null || value.isEmpty) {
                         return "Please input a password";
                       }
-                      if (value.length<8) {
+                      if (value.length < 8) {
                         return "Your password cannot be less than 8 characters";
                       } else {
                         return null;
@@ -97,7 +96,7 @@ class _SignInScreenState extends State<SignInScreen> {
                 ],
               ),
             ),
-            Spacer(),
+            const Spacer(),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Column(
@@ -110,15 +109,15 @@ class _SignInScreenState extends State<SignInScreen> {
                         }
                       },
                       label: "Sign in"),
-                  Gap(16),
+                  const Gap(16),
                   ZonerButton(
                     iconPath: "assets/svg/google.svg",
                     onPressed: () {},
                     label: "Continue With Google",
                     buttonType: AppButtonType.secondary,
                   ),
-                  Gap(8),
-                  Text("or"),
+                  const Gap(8),
+                  const Text("or"),
                   TextButton(
                     onPressed: () {},
                     child: Text(
@@ -127,7 +126,7 @@ class _SignInScreenState extends State<SignInScreen> {
                           .copyWith(color: theme.colorScheme.primary),
                     ),
                   ),
-                  Gap(64),
+                  const Gap(64),
                 ],
               ),
             )
