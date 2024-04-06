@@ -27,36 +27,37 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: PageView.builder(
-          controller: _pageController,
-          itemCount: onboardingData.length,
-          itemBuilder: (context, index) {
-            return OnboardingPage(
-                title: onboardingData[index]["title"]!,
-                text: onboardingData[index]["text"]!,
-                onSkipPressed: () {
-                  ///Todo: Navigate to sign in page
-                },
-                onPreviousPressed: () {
-                  _pageController.previousPage(
-                      duration: const Duration(
-                        milliseconds: 300,
-                      ),
-                      curve: Curves.easeInOut);
-                },
-                onNextPressed: () {
-                  ///If current index is the last item, then navigate to the sign up page instead
-
-                  if (index == onboardingData.length - 1) {
-                    ///Todo: Navigate to sign in page instead
-                  } else {
-                    _pageController.nextPage(
-                        duration: const Duration(
-                          milliseconds: 300,
-                        ),
-                        curve: Curves.easeInOut);
-                  }
-                });
-          }),
+        controller: _pageController,
+        itemCount: onboardingData.length,
+        itemBuilder: (context, index) {
+          return OnboardingPage(
+            title: onboardingData[index]["title"]!,
+            text: onboardingData[index]["text"]!,
+            onSkipPressed: () {
+              ///Todo: Navigate to sign in page
+            },
+            onPreviousPressed: () {
+              _pageController.previousPage(
+                  duration: const Duration(
+                    milliseconds: 300,
+                  ),
+                  curve: Curves.easeInOut);
+            },
+            onNextPressed: () {
+              ///If current index is the last item, then navigate to the sign up page instead
+              if (index == onboardingData.length - 1) {
+                ///Todo: Navigate to sign in page instead
+              } else {
+                _pageController.nextPage(
+                    duration: const Duration(
+                      milliseconds: 300,
+                    ),
+                    curve: Curves.easeInOut);
+              }
+            },
+          );
+        },
+      ),
     );
   }
 }

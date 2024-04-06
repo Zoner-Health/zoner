@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:zoner/core/core.dart';
-import 'package:zoner/screens/auth/onboarding/onboarding_screen.dart';
+import 'package:zoner/screens/auth/onboarding/doctor_patient_selector_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,6 +17,6 @@ class MyApp extends StatelessWidget {
         theme: ZonerThemeData.lightTheme,
         darkTheme: ZonerThemeData.darkTheme,
         themeMode: ThemeMode.system,
-        home: const OnboardingScreen());
+        home: const DoctorPatientSelectorScreen());
   }
 }

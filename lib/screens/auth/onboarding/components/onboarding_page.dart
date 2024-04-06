@@ -70,15 +70,13 @@ class OnboardingPage extends StatelessWidget {
               // ),
               Align(
                 alignment: Alignment.centerRight,
-                child: FittedBox(
-                  child: IconButton.filled(
-                    style: IconButton.styleFrom(
-                        elevation: 0, fixedSize: const Size.square(64)),
-                    onPressed: onNextPressed,
-                    icon: const Icon(
-                      FluentIcons.arrow_right_24_regular,
-                      color: Colors.white,
-                    ),
+                child: IconButton.filled(
+                  style: IconButton.styleFrom(
+                      elevation: 0, fixedSize: const Size.square(64)),
+                  onPressed: onNextPressed,
+                  icon: const Icon(
+                    FluentIcons.arrow_right_24_regular,
+                    color: Colors.white,
                   ),
                 ),
               ),
