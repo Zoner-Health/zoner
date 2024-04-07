@@ -8,7 +8,7 @@ const double kDefaultPaddingLarge = 24.0;
 class ZonerInputDecoration {
   static InputDecoration inputDecoration(BuildContext context) {
     return InputDecoration(
-        contentPadding: EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+        contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
         errorStyle: ZonerTextStyles.bodyMedium
             .copyWith(color: Theme.of(context).colorScheme.error),
         errorBorder: OutlineInputBorder(

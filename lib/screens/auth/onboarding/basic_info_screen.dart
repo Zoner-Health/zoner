@@ -83,7 +83,7 @@ class _BasicInfoScreenState extends State<BasicInfoScreen> {
                         }
                       },
                     ),
-                    Gap(16),
+                    const Gap(16),
                     const Text("Address"),
                     const Gap(8),
                     TextFormField(
@@ -113,7 +113,7 @@ class _BasicInfoScreenState extends State<BasicInfoScreen> {
                                   child: Column(
                                     children: [
                                       RadioListTile<Gender>.adaptive(
-                                          title: Text("Male"),
+                                          title: const Text("Male"),
                                           activeColor:
                                               theme.colorScheme.primary,
                                           value: Gender.male,
@@ -126,7 +126,7 @@ class _BasicInfoScreenState extends State<BasicInfoScreen> {
                                             });
                                           }),
                                       RadioListTile<Gender>.adaptive(
-                                          title: Text("Female"),
+                                          title: const Text("Female"),
                                           activeColor:
                                               theme.colorScheme.primary,
                                           value: Gender.female,
