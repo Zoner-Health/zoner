@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:zoner/screens/auth/onboarding/components/onboarding_page.dart';
 
 class OnboardingScreen extends StatefulWidget {
+  static const String id = "onboarding";
   const OnboardingScreen({super.key});
 
   @override

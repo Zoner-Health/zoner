@@ -5,6 +5,7 @@ import 'package:zoner/core/core.dart';
 import 'package:zoner/screens/components_global/components.dart';
 
 class RegisterScreen extends StatefulWidget {
+  static const String id = "register";
   const RegisterScreen({super.key});
 
   @override

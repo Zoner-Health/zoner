@@ -7,6 +7,7 @@ import '../../../core/core.dart';
 import 'components/doctor_patient_selector.dart';
 
 class DoctorPatientSelectorScreen extends StatelessWidget {
+  static const String id = "doctor_patient_select";
   const DoctorPatientSelectorScreen({super.key});
 
   @override

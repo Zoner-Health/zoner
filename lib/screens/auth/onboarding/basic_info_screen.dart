@@ -6,6 +6,8 @@ import '../../../core/core.dart';
 import '../../components_global/components.dart';
 
 class BasicInfoScreen extends StatefulWidget {
+  static const String id = "basic_info";
+
   const BasicInfoScreen({super.key});
 
   @override

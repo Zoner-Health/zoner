@@ -5,6 +5,7 @@ import 'package:zoner/core/core.dart';
 import 'package:zoner/screens/components_global/components.dart';
 
 class SignInScreen extends StatefulWidget {
+  static const String id = "sign_in";
   const SignInScreen({super.key});
 
   @override
