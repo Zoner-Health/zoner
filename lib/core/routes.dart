@@ -1,12 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:go_router/go_router.dart';
-import 'package:zoner/screens/auth/onboarding/basic_info_screen.dart';
-import 'package:zoner/screens/auth/onboarding/doctor_patient_selector_screen.dart';
 import 'package:zoner/screens/patient/discover/discover_screen.dart';
 
-import '../screens/auth/onboarding/onboarding_screen.dart';
-import '../screens/auth/register.dart';
-import '../screens/auth/sign_in.dart';
+import '../screens/auth/auth.dart';
+import '../screens/auth/onboarding/onboarding.dart';
 import '../screens/patient/home/home_screen.dart';
 
 class AppRouter {
@@ -27,6 +24,7 @@ class AppRouter {
         builder: (BuildContext context, GoRouterState state) =>
             const OnboardingScreen(),
         routes: <GoRoute>[
+          //------ Auth-------//
           GoRoute(
             path: SignInScreen.id,
             name: SignInScreen.id,
@@ -51,6 +49,23 @@ class AppRouter {
             builder: (BuildContext context, GoRouterState state) =>
                 const DoctorPatientSelectorScreen(),
           ),
+          GoRoute(
+            path: "patient/${HealthInfoScreen.id}",
+            name: HealthInfoScreen.id,
+            builder: (BuildContext context, GoRouterState state) =>
+                const HealthInfoScreen(),
+          ),
+          GoRoute(
+            path: "doctor/${DocumentsSubmittedScreen.id}",
+            name: DocumentsSubmittedScreen.id,
+            builder: (BuildContext context, GoRouterState state) =>
+                const DocumentsSubmittedScreen(),
+          ),
+          GoRoute(
+              path: "doctor/${DoctorVerificationScreen.id}",
+              name: DoctorVerificationScreen.id,
+              builder: (BuildContext context, GoRouterState state) =>
+                  const DoctorVerificationScreen()),
         ],
       ),
 
@@ -58,7 +73,7 @@ class AppRouter {
 
       ///------ Discover-------///
       GoRoute(
-        path: "patient/${DiscoverScreen.id}",
+        path: "/patient/${DiscoverScreen.id}",
         name: DiscoverScreen.id,
         builder: (BuildContext context, GoRouterState state) =>
             const DiscoverScreen(),

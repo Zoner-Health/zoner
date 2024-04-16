@@ -8,7 +8,8 @@ const double kDefaultPaddingLarge = 24.0;
 class ZonerInputDecoration {
   static InputDecoration inputDecoration(BuildContext context) {
     return InputDecoration(
-        contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+        contentPadding:
+            const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
         errorStyle: ZonerTextStyles.bodyMedium
             .copyWith(color: Theme.of(context).colorScheme.error),
         errorBorder: OutlineInputBorder(
@@ -39,7 +40,9 @@ class ZonerInputDecoration {
         ),
         filled: true,
         isDense: true,
-        fillColor: Theme.of(context).cardColor,
+        fillColor: Theme.of(context).brightness == Brightness.light
+            ? ZonerColors.neutral95
+            : ZonerColors.neutral20,
         hintStyle: ZonerTextStyles.bodyMedium.copyWith(
             color: ZonerColors.neutral50, fontFamily: "Plus Jakarta Sans"),
         labelStyle:

@@ -14,8 +14,6 @@ class BasicInfoScreen extends StatefulWidget {
   State<BasicInfoScreen> createState() => _BasicInfoScreenState();
 }
 
-enum Gender { male, female }
-
 class _BasicInfoScreenState extends State<BasicInfoScreen> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   final TextEditingController nameController = TextEditingController();
