@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:zoner/core/core.dart';
 import 'package:zoner/core/routes.dart';
+import 'package:zoner/screens/patient/consultation/find_doctors_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
+    return MaterialApp(
       title: 'Zoner',
       debugShowCheckedModeBanner: false,
       theme: ZonerThemeData.lightTheme,
@@ -23,8 +24,8 @@ class MyApp extends StatelessWidget {
         curve: Curves.easeInOut,
         duration: const Duration(milliseconds: 300),
       ),
-      routerConfig: appRouter.router,
-      //home: const DocumentsSubmittedScreen(),
+      //  routerConfig: appRouter.router,
+      home: const FindDoctorsScreen(),
     );
   }
 }

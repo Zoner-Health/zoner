@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
 import 'core.dart';
 
 class ZonerThemeData {
@@ -11,7 +12,6 @@ class ZonerThemeData {
     scaffoldBackgroundColor: ZonerColors.white,
     iconTheme: const IconThemeData(color: ZonerColors.black),
     primaryIconTheme: const IconThemeData(color: ZonerColors.black),
-
     cardTheme: CardTheme(
       color: ZonerColors.blue95,
       elevation: 0,
@@ -33,8 +33,8 @@ class ZonerThemeData {
           ZonerTextStyles.headlineLargeAlt.copyWith(color: ZonerColors.black),
       headlineSmall:
           ZonerTextStyles.headlineSmallAlt.copyWith(color: ZonerColors.black),
-      headlineMedium: ZonerTextStyles.headlineMediumAlt
-          .copyWith(color: ZonerColors.black),
+      headlineMedium:
+          ZonerTextStyles.headlineMediumAlt.copyWith(color: ZonerColors.black),
 
       ///
       titleLarge:
@@ -45,12 +45,9 @@ class ZonerThemeData {
           ZonerTextStyles.titleSmallAlt.copyWith(color: ZonerColors.black),
 
       ///
-      bodyLarge:
-          ZonerTextStyles.bodyLarge.copyWith(color: ZonerColors.black),
-      bodyMedium:
-          ZonerTextStyles.bodyMedium.copyWith(color: ZonerColors.black),
-      bodySmall:
-          ZonerTextStyles.bodySmall.copyWith(color: ZonerColors.black),
+      bodyLarge: ZonerTextStyles.bodyLarge.copyWith(color: ZonerColors.black),
+      bodyMedium: ZonerTextStyles.bodyMedium.copyWith(color: ZonerColors.black),
+      bodySmall: ZonerTextStyles.bodySmall.copyWith(color: ZonerColors.black),
     ),
     appBarTheme: const AppBarTheme(
         systemOverlayStyle: SystemUiOverlayStyle.dark,
@@ -58,22 +55,24 @@ class ZonerThemeData {
         backgroundColor: Colors.transparent),
     cardColor: ZonerColors.blue95,
     elevatedButtonTheme: const ElevatedButtonThemeData(
-
       style: ButtonStyle(
-        fixedSize: MaterialStatePropertyAll<Size>(Size.fromHeight(52)),
-        padding: MaterialStatePropertyAll<EdgeInsetsGeometry>(
-            EdgeInsets.symmetric(horizontal: 16)),
-        elevation: MaterialStatePropertyAll<double>(0),
-
-        splashFactory: InkSparkle.splashFactory
-      ),
+          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+          fixedSize: MaterialStatePropertyAll<Size>(Size.fromHeight(52)),
+          padding: MaterialStatePropertyAll<EdgeInsetsGeometry>(
+              EdgeInsets.symmetric(horizontal: 16)),
+          elevation: MaterialStatePropertyAll<double>(0),
+          splashFactory: InkSparkle.splashFactory),
     ),
+    iconButtonTheme: const IconButtonThemeData(
+        style: ButtonStyle(
+      splashFactory: InkSparkle.splashFactory,
+      elevation: MaterialStatePropertyAll<double>(0),
+    )),
     textButtonTheme: const TextButtonThemeData(
         style: ButtonStyle(
-          elevation: MaterialStatePropertyAll<double>(0),
-          splashFactory: InkSparkle.splashFactory,
-        )
-    ),
+      elevation: MaterialStatePropertyAll<double>(0),
+      splashFactory: InkSparkle.splashFactory,
+    )),
     chipTheme: ChipThemeData(
       labelStyle:
           ZonerTextStyles.bodyMedium.copyWith(color: ZonerColors.blue10),
@@ -124,7 +123,7 @@ class ZonerThemeData {
       secondary: ZonerColors.yellowSeed,
       secondaryContainer: ZonerColors.yellow95, //Or maybe do Yellow 90
       onSecondary: Colors.white,
-      onSecondaryContainer:  ZonerColors.yellow20,
+      onSecondaryContainer: ZonerColors.yellow20,
       error: ZonerColors.red50,
       onError: ZonerColors.white,
       errorContainer: ZonerColors.red90,
@@ -183,8 +182,8 @@ class ZonerThemeData {
           ZonerTextStyles.headlineLargeAlt.copyWith(color: ZonerColors.white),
       headlineSmall:
           ZonerTextStyles.headlineSmallAlt.copyWith(color: ZonerColors.white),
-      headlineMedium: ZonerTextStyles.headlineMediumAlt
-          .copyWith(color: ZonerColors.white),
+      headlineMedium:
+          ZonerTextStyles.headlineMediumAlt.copyWith(color: ZonerColors.white),
 
       ///
       titleLarge:
@@ -195,12 +194,9 @@ class ZonerThemeData {
           ZonerTextStyles.titleSmallAlt.copyWith(color: ZonerColors.white),
 
       ///
-      bodyLarge:
-          ZonerTextStyles.bodyLarge.copyWith(color: ZonerColors.white),
-      bodyMedium:
-          ZonerTextStyles.bodyMedium.copyWith(color: ZonerColors.white),
-      bodySmall:
-          ZonerTextStyles.bodySmall.copyWith(color: ZonerColors.white),
+      bodyLarge: ZonerTextStyles.bodyLarge.copyWith(color: ZonerColors.white),
+      bodyMedium: ZonerTextStyles.bodyMedium.copyWith(color: ZonerColors.white),
+      bodySmall: ZonerTextStyles.bodySmall.copyWith(color: ZonerColors.white),
     ),
     appBarTheme: const AppBarTheme(
       systemOverlayStyle: SystemUiOverlayStyle.light,
@@ -210,21 +206,24 @@ class ZonerThemeData {
     cardColor: ZonerColors.neutral20,
     elevatedButtonTheme: const ElevatedButtonThemeData(
       style: ButtonStyle(
+        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
         fixedSize: MaterialStatePropertyAll<Size>(Size.fromHeight(52)),
         padding: MaterialStatePropertyAll<EdgeInsetsGeometry>(
             EdgeInsets.symmetric(horizontal: 16)),
         elevation: MaterialStatePropertyAll<double>(0),
-          splashFactory: InkSparkle.splashFactory,
+        splashFactory: InkSparkle.splashFactory,
       ),
     ),
-
+    iconButtonTheme: const IconButtonThemeData(
+        style: ButtonStyle(
+      splashFactory: InkSparkle.splashFactory,
+      elevation: MaterialStatePropertyAll<double>(0),
+    )),
     textButtonTheme: const TextButtonThemeData(
-      style: ButtonStyle(
-        elevation: MaterialStatePropertyAll<double>(0),
-        splashFactory: InkSparkle.splashFactory,
-      )
-    ),
-
+        style: ButtonStyle(
+      elevation: MaterialStatePropertyAll<double>(0),
+      splashFactory: InkSparkle.splashFactory,
+    )),
     chipTheme: ChipThemeData(
       elevation: 0,
       selectedColor: ZonerColors.blue70,
@@ -256,7 +255,7 @@ class ZonerThemeData {
       secondary: ZonerColors.yellow70,
       secondaryContainer: ZonerColors.yellow10, //Or maybe do Yellow 90
       onSecondary: ZonerColors.black,
-      onSecondaryContainer:  Colors.white,
+      onSecondaryContainer: Colors.white,
       error: ZonerColors.red60,
       onError: ZonerColors.white,
       errorContainer: ZonerColors.red10,
