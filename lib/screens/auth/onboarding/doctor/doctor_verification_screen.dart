@@ -1,7 +1,6 @@
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:zoner/screens/components_global/zoner_bottom_sheet.dart';
 
 import '../../../../core/core.dart';
 import '../../../components_global/components.dart';

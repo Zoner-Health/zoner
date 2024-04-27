@@ -6,7 +6,7 @@ import 'core.dart';
 class ZonerThemeData {
   static ThemeData lightTheme = ThemeData(
     useMaterial3: true,
-    primaryColor: ZonerColors.purple40,
+    primaryColor: ZonerColors.purpleSeed,
     primaryColorLight: ZonerColors.purple50,
     primaryColorDark: ZonerColors.purple30,
     scaffoldBackgroundColor: ZonerColors.white,
@@ -116,7 +116,7 @@ class ZonerThemeData {
     colorScheme: ColorScheme.fromSeed(
       brightness: Brightness.light,
       seedColor: ZonerColors.purpleSeed,
-      primary: ZonerColors.purple40,
+      primary: ZonerColors.purpleSeed,
       onPrimary: ZonerColors.white,
       primaryContainer: ZonerColors.purple90,
       onPrimaryContainer: ZonerColors.purple10,

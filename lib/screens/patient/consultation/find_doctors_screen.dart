@@ -1,14 +1,41 @@
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:gap/gap.dart';
 import 'package:zoner/screens/patient/consultation/components/components.dart';
+import 'package:zoner/screens/patient/consultation/components/search_filter.dart';
 
 import '../../../core/core.dart';
 import '../../components_global/components.dart';
 
-class FindDoctorsScreen extends StatelessWidget {
+class FindDoctorsScreen extends StatefulWidget {
   static const String id = "find_doctor";
   const FindDoctorsScreen({super.key});
+
+  @override
+  State<FindDoctorsScreen> createState() => _FindDoctorsScreenState();
+}
+
+class _FindDoctorsScreenState extends State<FindDoctorsScreen>
+    with SingleTickerProviderStateMixin {
+  TextEditingController searchBarController = TextEditingController();
+  final OverlayPortalController _overlayPortalController =
+      OverlayPortalController();
+  late final AnimationController _animationController;
+
+  @override
+  void initState() {
+    _animationController = AnimationController(vsync: this);
+
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    searchBarController.dispose();
+    _animationController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -42,44 +69,9 @@ class FindDoctorsScreen extends StatelessWidget {
                   Row(
                     children: [
                       Expanded(
-                        child: TextFormField(
-                          decoration:
-                              ZonerInputDecoration.inputDecoration(context)
-                                  .copyWith(
-                            hintText: "Search",
-                            prefixIcon:
-                                const Icon(FluentIcons.search_24_regular),
-                            errorBorder: OutlineInputBorder(
-                              gapPadding: 4,
-                              borderSide: BorderSide(
-                                  color: Theme.of(context).colorScheme.error,
-                                  width: 1),
-                              borderRadius: BorderRadius.circular(32),
-                            ),
-                            border: OutlineInputBorder(
-                              gapPadding: 0,
-                              borderSide: BorderSide.none,
-                              borderRadius: BorderRadius.circular(32),
-                            ),
-                            enabledBorder: OutlineInputBorder(
-                              gapPadding: 0,
-                              borderSide: BorderSide.none,
-                              borderRadius: BorderRadius.circular(32),
-                            ),
-                            disabledBorder: OutlineInputBorder(
-                              gapPadding: 0,
-                              borderSide: BorderSide.none,
-                              borderRadius: BorderRadius.circular(32),
-                            ),
-                            focusedBorder: OutlineInputBorder(
-                              gapPadding: 0,
-                              borderSide: const BorderSide(
-                                  width: 1, color: ZonerColors.purple60),
-                              borderRadius: BorderRadius.circular(32),
-                            ),
-                          ),
-                        ),
-                      ),
+                          child: ZonerSearchBar(
+                        controller: searchBarController,
+                      )),
                       const Gap(kPadding8),
                       IconButton.filled(
                           style: IconButton.styleFrom(
@@ -97,8 +89,34 @@ class FindDoctorsScreen extends StatelessWidget {
                           style: IconButton.styleFrom(
                             backgroundColor: theme.cardColor,
                           ),
-                          onPressed: () {},
-                          icon: const Icon(FluentIcons.filter_24_regular)),
+                          onPressed: () {
+                            _overlayPortalController.toggle();
+                          },
+                          icon: OverlayPortal(
+                              controller: _overlayPortalController,
+                              overlayChildBuilder: (context) => Positioned(
+                                      top: 150,
+                                      left: 0,
+                                      right: 0,
+                                      child: SearchFilter(
+                                        onClosedPressed: () {
+                                          _animationController.reverse().then(
+                                              (value) =>
+                                                  _overlayPortalController
+                                                      .hide());
+                                        },
+                                      ))
+                                  .animate(controller: _animationController)
+                                  .fadeIn()
+                                  .scale(
+                                    curve: Curves.easeInOutCubic,
+                                    duration: 250.ms,
+                                    alignment: Alignment.topLeft,
+                                    begin: const Offset(0, 0),
+                                    end: const Offset(1, 1),
+                                  ),
+                              child:
+                                  const Icon(FluentIcons.filter_24_regular))),
                       const ZonerChip(
                         chipType: AppChipType.info,
                         label: "Doctor",
