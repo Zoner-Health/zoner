@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:zoner/screens/components_global/components.dart';
 
+import '../../../core/core.dart';
+
 class ConsultationOnboardingScreen extends StatelessWidget {
   static const String id = "consultation_onboarding";
   const ConsultationOnboardingScreen({super.key});
@@ -41,7 +43,7 @@ class ConsultationOnboardingScreen extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: ZonerButton(onPressed: () {}, label: "Begin Consultation"),
           ),
-          const Gap(64),
+          const Gap(kPadding64),
         ],
       ),
     );

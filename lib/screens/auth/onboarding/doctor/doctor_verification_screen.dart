@@ -52,7 +52,7 @@ class _DoctorVerificationScreenState extends State<DoctorVerificationScreen> {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     const Text("Experience"),
-                    const Gap(8),
+                    const Gap(kPadding8),
                     TextFormField(
                       // initialValue: nameController.value.text,
                       controller: experienceController,
@@ -67,9 +67,9 @@ class _DoctorVerificationScreenState extends State<DoctorVerificationScreen> {
                         }
                       },
                     ),
-                    const Gap(16),
+                    const Gap(kPadding16),
                     const Text("Certifications"),
-                    const Gap(8),
+                    const Gap(kPadding8),
                     TextFormField(
                       controller: weightController,
                       keyboardType: TextInputType.number,
@@ -100,9 +100,9 @@ class _DoctorVerificationScreenState extends State<DoctorVerificationScreen> {
                             label: "Certificate.pdf"),
                       ],
                     ),
-                    const Gap(16),
+                    const Gap(kPadding16),
                     const Text("Associated Hospital"),
-                    const Gap(8),
+                    const Gap(kPadding8),
                     TextFormField(
                       onTap: () {
                         showModalBottomSheet(
@@ -116,7 +116,7 @@ class _DoctorVerificationScreenState extends State<DoctorVerificationScreen> {
                                 children: [
                                   ListView.separated(
                                     separatorBuilder: (context, index) =>
-                                        const Gap(8),
+                                        const Gap(kPadding8),
                                     shrinkWrap: true,
                                     itemBuilder: (context, index) =>
                                         const HospitalListItem(),
@@ -170,7 +170,7 @@ class _DoctorVerificationScreenState extends State<DoctorVerificationScreen> {
                     },
                     label: "Continue"),
               ),
-              const Gap(64),
+              const Gap(kPadding64),
             ],
           ),
         ),

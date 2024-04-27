@@ -32,7 +32,7 @@ class DoctorSearchResultCard extends StatelessWidget {
                 backgroundImage: AssetImage("assets/images/memoji.jpg"),
                 radius: 42,
               ),
-              const Gap(16),
+              const Gap(kPadding16),
               Expanded(
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
@@ -48,7 +48,7 @@ class DoctorSearchResultCard extends StatelessWidget {
                       style: theme.textTheme.bodyMedium!
                           .copyWith(color: ZonerColors.neutral50),
                     ),
-                    const Gap(8),
+                    const Gap(kPadding8),
                     const Wrap(
                       spacing: 24,
                       children: [
@@ -71,7 +71,7 @@ class DoctorSearchResultCard extends StatelessWidget {
               )
             ],
           ),
-          const Gap(8),
+          const Gap(kPadding8),
           ZonerChip(
             color: theme.colorScheme.primary,
             chipType: AppChipType.info,

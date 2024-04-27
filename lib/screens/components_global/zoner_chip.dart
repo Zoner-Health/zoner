@@ -72,7 +72,7 @@ class _ZonerChipState extends State<ZonerChip> {
                               height: 20,
                               colorFilter: ColorFilter.mode(
                                   labelColor, BlendMode.srcIn)),
-                      const Gap(8)
+                      const Gap(kPadding8)
                     ],
                   ),
                 ),
@@ -82,7 +82,7 @@ class _ZonerChipState extends State<ZonerChip> {
                     color: labelColor,
                   ),
                 ),
-                const Gap(8),
+                const Gap(kPadding8),
                 Offstage(
                     offstage: !labelSelected,
                     child: Icon(FluentIcons.dismiss_24_regular,
@@ -113,7 +113,7 @@ class _ZonerChipState extends State<ZonerChip> {
                               height: 20,
                               colorFilter: ColorFilter.mode(
                                   labelColor, BlendMode.srcIn)),
-                      const Gap(8)
+                      const Gap(kPadding8)
                     ],
                   ),
                 ),
