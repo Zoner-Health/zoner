@@ -19,7 +19,7 @@ class DoctorSearchResultCard extends StatelessWidget {
       decoration: BoxDecoration(
         // color: theme.cardColor,
         border: Border.all(
-            color: isDarkMode ? theme.cardColor : ZonerColors.blue90),
+            color: isDarkMode ? theme.cardColor : ZonerColors.purple90),
         borderRadius: BorderRadius.circular(24),
       ),
       child: Column(

@@ -72,7 +72,7 @@ class FindDoctorsScreen extends StatelessWidget {
                           focusedBorder: OutlineInputBorder(
                             gapPadding: 0,
                             borderSide: const BorderSide(
-                                width: 1, color: ZonerColors.blue60),
+                                width: 1, color: ZonerColors.purple60),
                             borderRadius: BorderRadius.circular(32),
                           ),
                         ),

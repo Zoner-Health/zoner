@@ -99,7 +99,7 @@ class _ZonerChipState extends State<ZonerChip> {
         : Chip(
             //side: BorderSide(width: 1, color: theme.colorScheme.primary),
             backgroundColor: widget.backgroundColor ??
-                (isDarkMode ? theme.colorScheme.primary : ZonerColors.blue95),
+                (isDarkMode ? theme.colorScheme.primary : ZonerColors.purple95),
             label: Row(
               mainAxisSize: MainAxisSize.min,
               children: [

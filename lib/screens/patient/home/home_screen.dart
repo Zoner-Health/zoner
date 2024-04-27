@@ -79,7 +79,7 @@ class HomeScreen extends StatelessWidget {
                         ///Todo: start consultation Flow
                       },
                       label: "Consult\n with AI",
-                      labelColor: ZonerColors.yellow60,
+                      labelColor: ZonerColors.orange60,
                     ),
                     const Gap(16),
                     ConsultationCTACard(

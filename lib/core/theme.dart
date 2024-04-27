@@ -6,14 +6,14 @@ import 'core.dart';
 class ZonerThemeData {
   static ThemeData lightTheme = ThemeData(
     useMaterial3: true,
-    primaryColor: ZonerColors.blue40,
-    primaryColorLight: ZonerColors.blue50,
-    primaryColorDark: ZonerColors.blue30,
+    primaryColor: ZonerColors.purple40,
+    primaryColorLight: ZonerColors.purple50,
+    primaryColorDark: ZonerColors.purple30,
     scaffoldBackgroundColor: ZonerColors.white,
     iconTheme: const IconThemeData(color: ZonerColors.black),
     primaryIconTheme: const IconThemeData(color: ZonerColors.black),
     cardTheme: CardTheme(
-      color: ZonerColors.blue95,
+      color: ZonerColors.purple95,
       elevation: 0,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(24),
@@ -53,7 +53,7 @@ class ZonerThemeData {
         systemOverlayStyle: SystemUiOverlayStyle.dark,
         elevation: 0,
         backgroundColor: Colors.transparent),
-    cardColor: ZonerColors.blue95,
+    cardColor: ZonerColors.purple95,
     elevatedButtonTheme: const ElevatedButtonThemeData(
       style: ButtonStyle(
           tapTargetSize: MaterialTapTargetSize.shrinkWrap,
@@ -75,15 +75,15 @@ class ZonerThemeData {
     )),
     chipTheme: ChipThemeData(
       labelStyle:
-          ZonerTextStyles.bodyMedium.copyWith(color: ZonerColors.blue10),
+          ZonerTextStyles.bodyMedium.copyWith(color: ZonerColors.purple10),
       elevation: 0,
-      selectedColor: ZonerColors.blue90,
+      selectedColor: ZonerColors.purple90,
       backgroundColor: ZonerColors.neutral95,
       side: BorderSide.none,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(32)),
     ),
     sliderTheme: const SliderThemeData(
-        activeTickMarkColor: ZonerColors.blue40,
+        activeTickMarkColor: ZonerColors.purple40,
         inactiveTrackColor: ZonerColors.neutral90,
         trackHeight: 4,
         trackShape: RoundedRectSliderTrackShape(),
@@ -100,30 +100,30 @@ class ZonerThemeData {
       thumbColor: const MaterialStatePropertyAll<Color>(ZonerColors.white),
       trackColor: MaterialStateProperty.resolveWith((states) {
         if (states.contains(MaterialState.selected)) {
-          return ZonerColors.blue40;
+          return ZonerColors.purple40;
         }
-        return ZonerColors.blue90;
+        return ZonerColors.purple90;
       }),
       trackOutlineColor: MaterialStateProperty.resolveWith((states) {
         if (states.contains(MaterialState.selected)) {
-          return ZonerColors.blue40;
+          return ZonerColors.purple40;
         }
-        return ZonerColors.blue90;
+        return ZonerColors.purple90;
       }),
       trackOutlineWidth: const MaterialStatePropertyAll<double>(0),
       materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
     ),
     colorScheme: ColorScheme.fromSeed(
       brightness: Brightness.light,
-      seedColor: ZonerColors.blueSeed,
-      primary: ZonerColors.blue40,
+      seedColor: ZonerColors.purpleSeed,
+      primary: ZonerColors.purple40,
       onPrimary: ZonerColors.white,
-      primaryContainer: ZonerColors.blue90,
-      onPrimaryContainer: ZonerColors.blue10,
-      secondary: ZonerColors.yellowSeed,
-      secondaryContainer: ZonerColors.yellow95, //Or maybe do Yellow 90
+      primaryContainer: ZonerColors.purple90,
+      onPrimaryContainer: ZonerColors.purple10,
+      secondary: ZonerColors.orangeSeed,
+      secondaryContainer: ZonerColors.orange95, //Or maybe do Yellow 90
       onSecondary: Colors.white,
-      onSecondaryContainer: ZonerColors.yellow20,
+      onSecondaryContainer: ZonerColors.orange20,
       error: ZonerColors.red50,
       onError: ZonerColors.white,
       errorContainer: ZonerColors.red90,
@@ -134,28 +134,28 @@ class ZonerThemeData {
   ///--------Dark Theme-------///
   static ThemeData darkTheme = ThemeData(
     useMaterial3: true,
-    primaryColor: ZonerColors.blue70,
-    primaryColorLight: ZonerColors.blue90,
-    primaryColorDark: ZonerColors.blue70,
+    primaryColor: ZonerColors.purple70,
+    primaryColorLight: ZonerColors.purple90,
+    primaryColorDark: ZonerColors.purple70,
     scaffoldBackgroundColor: ZonerColors.black,
     iconTheme: const IconThemeData(color: ZonerColors.white),
     primaryIconTheme: const IconThemeData(color: ZonerColors.white),
     switchTheme: SwitchThemeData(
       thumbColor: MaterialStateProperty.resolveWith((states) {
         if (states.contains(MaterialState.selected)) {
-          return ZonerColors.blue10;
+          return ZonerColors.purple10;
         }
         return ZonerColors.neutral70;
       }),
       trackColor: MaterialStateProperty.resolveWith((states) {
         if (states.contains(MaterialState.selected)) {
-          return ZonerColors.blue70;
+          return ZonerColors.purple70;
         }
         return ZonerColors.neutral20;
       }),
       trackOutlineColor: MaterialStateProperty.resolveWith((states) {
         if (states.contains(MaterialState.selected)) {
-          return ZonerColors.blue70;
+          return ZonerColors.purple70;
         }
         return ZonerColors.neutral20;
       }),
@@ -226,13 +226,13 @@ class ZonerThemeData {
     )),
     chipTheme: ChipThemeData(
       elevation: 0,
-      selectedColor: ZonerColors.blue70,
+      selectedColor: ZonerColors.purple70,
       backgroundColor: ZonerColors.neutral20,
       side: BorderSide.none,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(32)),
     ),
     sliderTheme: const SliderThemeData(
-        activeTickMarkColor: ZonerColors.blue40,
+        activeTickMarkColor: ZonerColors.purple40,
         inactiveTrackColor: ZonerColors.neutral90,
         trackHeight: 4,
         trackShape: RoundedRectSliderTrackShape(),
@@ -247,13 +247,13 @@ class ZonerThemeData {
         overlayShape: RoundSliderOverlayShape(overlayRadius: 0)),
     colorScheme: ColorScheme.fromSeed(
       brightness: Brightness.dark,
-      seedColor: ZonerColors.blueSeed,
-      primary: ZonerColors.blue70,
-      onPrimary: ZonerColors.blue10,
-      primaryContainer: ZonerColors.blue10,
-      onPrimaryContainer: ZonerColors.blue95,
-      secondary: ZonerColors.yellow70,
-      secondaryContainer: ZonerColors.yellow10, //Or maybe do Yellow 90
+      seedColor: ZonerColors.purpleSeed,
+      primary: ZonerColors.purple70,
+      onPrimary: ZonerColors.purple10,
+      primaryContainer: ZonerColors.purple10,
+      onPrimaryContainer: ZonerColors.purple95,
+      secondary: ZonerColors.orange70,
+      secondaryContainer: ZonerColors.orange10, //Or maybe do Yellow 90
       onSecondary: ZonerColors.black,
       onSecondaryContainer: Colors.white,
       error: ZonerColors.red60,
