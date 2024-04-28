@@ -74,7 +74,8 @@ class DoctorProfileScreen extends StatelessWidget {
             const Gap(kPadding24),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: kPadding16),
-              child: ZonerButton(onPressed: () {}, label: "Consult"),
+              child:
+                  ZonerButton(onPressed: () {}, label: "Schedule Appointment"),
             ),
             const Gap(kPadding64),
           ],

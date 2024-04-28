@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:zoner/core/core.dart';
 import 'package:zoner/core/routes.dart';
-import 'package:zoner/screens/patient/consultation/doctor_profile_screen.dart';
+import 'package:zoner/screens/patient/consultation/schedule_appointment_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,17 +15,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Zoner',
-      debugShowCheckedModeBanner: false,
-      theme: ZonerThemeData.lightTheme,
-      darkTheme: ZonerThemeData.darkTheme,
-      themeMode: ThemeMode.system,
-      themeAnimationStyle: AnimationStyle(
-        curve: Curves.easeInOut,
-        duration: const Duration(milliseconds: 300),
-      ),
-      //  routerConfig: appRouter.router,
-      home: const DoctorProfileScreen(),
-    );
+        title: 'Zoner',
+        debugShowCheckedModeBanner: false,
+        theme: ZonerThemeData.lightTheme,
+        darkTheme: ZonerThemeData.darkTheme,
+        themeMode: ThemeMode.system,
+        themeAnimationStyle: AnimationStyle(
+          curve: Curves.easeInOut,
+          duration: const Duration(milliseconds: 300),
+        ),
+        //  routerConfig: appRouter.router,
+        home: const ScheduleAppointmentScreen());
   }
 }
