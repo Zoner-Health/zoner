@@ -26,7 +26,7 @@ class ConsultationBookingSuccessScreen extends StatelessWidget {
             const Icon(
               FluentIcons.checkmark_circle_48_regular,
               size: 72,
-              color: ZonerColors.greenSeed,
+              color: ZonerColors.green70,
             ),
             const Gap(kPadding16),
             Text("Success",
