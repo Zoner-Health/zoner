@@ -41,14 +41,14 @@ class ZonerInputDecoration {
         ),
         focusedBorder: OutlineInputBorder(
           gapPadding: 0,
-          borderSide: const BorderSide(width: 1, color: ZonerColors.purple60),
+          borderSide: const BorderSide(width: 1, color: ZonerColors.purple70),
           borderRadius: BorderRadius.circular(12),
         ),
         filled: true,
         isDense: true,
         fillColor: Theme.of(context).brightness == Brightness.light
             ? ZonerColors.neutral95
-            : ZonerColors.neutral20,
+            : ZonerColors.neutral15,
         hintStyle: ZonerTextStyles.bodyMedium.copyWith(
             color: ZonerColors.neutral50, fontFamily: "Plus Jakarta Sans"),
         labelStyle:
