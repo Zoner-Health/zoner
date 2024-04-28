@@ -108,12 +108,14 @@ class _FindDoctorsScreenState extends State<FindDoctorsScreen>
                                       ))
                                   .animate(controller: _animationController)
                                   .fadeIn()
-                                  .scale(
+                                  .scaleY(
                                     curve: Curves.easeInOutCubic,
                                     duration: 250.ms,
                                     alignment: Alignment.topLeft,
-                                    begin: const Offset(0, 0),
-                                    end: const Offset(1, 1),
+                                    // begin: const Offset(0, 0),
+                                    // end: const Offset(1, 1),
+                                    begin: 0,
+                                    end: 1,
                                   ),
                               child:
                                   const Icon(FluentIcons.filter_24_regular))),

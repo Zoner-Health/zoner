@@ -52,9 +52,8 @@ class _SearchFilterState extends State<SearchFilter>
                 // backgroundColor: theme.cardColor,
               ),
               onPressed: () {
-                _animationController
-                    .reverse()
-                    .then((value) => widget.onClosedPressed.call());
+                _animationController.reverse();
+                Future.delayed(150.ms, () => widget.onClosedPressed.call());
               },
               icon: const Icon(
                 size: 20,
@@ -63,7 +62,7 @@ class _SearchFilterState extends State<SearchFilter>
               ),
             ),
           ).animate(controller: _animationController).moveY(
-              delay: 250.ms,
+              delay: 200.ms,
               duration: 200.ms,
               begin: 60,
               end: 0,

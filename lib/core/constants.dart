@@ -58,7 +58,7 @@ class ZonerInputDecoration {
 
 ///------Colors-------///
 class ZonerColors {
-  static const Color black = Color(0xFF0F0F13);
+  static const Color black = Color(0xFF121014);
   static const Color white = Color(0xFFFFFBFF);
 
   ///-----------Purple---------///
