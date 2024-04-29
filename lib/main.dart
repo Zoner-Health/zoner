@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:zoner/core/core.dart';
 import 'package:zoner/core/routes.dart';
-import 'package:zoner/screens/patient/consultation/consultation_booking_success_screen.dart';
+import 'package:zoner/screens/patient/consultation/schedule_appointment_calendar_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,6 +25,6 @@ class MyApp extends StatelessWidget {
           duration: const Duration(milliseconds: 300),
         ),
         //  routerConfig: appRouter.router,
-        home: const ConsultationBookingSuccessScreen());
+        home: const ScheduleAppointmentCalendarScreen());
   }
 }

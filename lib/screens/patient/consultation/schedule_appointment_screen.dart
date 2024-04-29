@@ -5,9 +5,9 @@ import 'package:zoner/core/core.dart';
 import 'package:zoner/screens/components_global/components.dart';
 import 'package:zoner/screens/patient/consultation/components/available_time_selector.dart';
 
-class ScheduleConsultationAppointmentScreen extends StatelessWidget {
+class ScheduleAppointmentScreen extends StatelessWidget {
   static const String id = "schedule_appointment";
-  const ScheduleConsultationAppointmentScreen({super.key});
+  const ScheduleAppointmentScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
