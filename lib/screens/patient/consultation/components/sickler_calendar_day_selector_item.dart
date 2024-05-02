@@ -28,10 +28,6 @@ class _CalendarDaySelectorItemState extends State<CalendarDaySelectorItem>
     with TickerProviderStateMixin {
   final Color _color = ZonerColors.purpleSeed;
 
-  @override
-  void dispose() {
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -67,7 +63,7 @@ class _CalendarDaySelectorItemState extends State<CalendarDaySelectorItem>
                       fontWeight: widget.isSelected
                           ? FontWeight.w800
                           : FontWeight.normal)),
-              Gap(kPadding8),
+              const Gap(kPadding8),
               Text(widget.date,
                   style: theme.textTheme.bodyMedium!.copyWith(
                       color: widget.isSelected

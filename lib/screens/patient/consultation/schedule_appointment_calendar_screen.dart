@@ -1,3 +1,4 @@
+import 'package:calendar_view/calendar_view.dart';
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -5,19 +6,29 @@ import 'package:zoner/core/core.dart';
 import 'package:zoner/screens/components_global/components.dart';
 import 'package:zoner/screens/patient/consultation/components/sickler_calendar_day_selector.dart';
 
-class ScheduleAppointmentCalendarScreen extends StatelessWidget {
+class ScheduleAppointmentCalendarScreen extends StatefulWidget {
   static const String id = "schedule_appointment_calendar";
   const ScheduleAppointmentCalendarScreen({super.key});
+
+  @override
+  State<ScheduleAppointmentCalendarScreen> createState() =>
+      _ScheduleAppointmentCalendarScreenState();
+}
+
+class _ScheduleAppointmentCalendarScreenState
+    extends State<ScheduleAppointmentCalendarScreen> {
+  String _selectedDay = "Sunday";
 
   @override
   Widget build(BuildContext context) {
     final ThemeData theme = Theme.of(context);
     return Scaffold(
-      body: Column(
-        children: [
-          const ZonerAppBar(pageTitle: "Schedule Consultation"),
-          Expanded(
-            child: Padding(
+      body: SingleChildScrollView(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            const ZonerAppBar(pageTitle: "Schedule Consultation"),
+            Padding(
               padding: const EdgeInsets.symmetric(horizontal: kPadding16),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -27,26 +38,26 @@ class ScheduleAppointmentCalendarScreen extends StatelessWidget {
                       Container(
                           height: 48,
                           width: 48,
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                               shape: BoxShape.circle,
-                              image: const DecorationImage(
+                              image: DecorationImage(
                                   image:
                                       AssetImage("assets/images/memoji.jpg")))),
-                      Gap(kPadding12),
+                      const Gap(kPadding12),
                       Text("Dr Lucy Lu's Calendar",
                           style: theme.textTheme.bodyMedium),
                     ],
                   ),
-                  Gap(kPadding16),
+                  const Gap(kPadding16),
 
                   ///Month Selector
                   Container(
-                    padding: EdgeInsets.symmetric(
+                    padding: const EdgeInsets.symmetric(
                         horizontal: kPadding16, vertical: kPadding8),
                     decoration: BoxDecoration(
                         color: theme.cardColor,
                         borderRadius: BorderRadius.circular(kPadding32)),
-                    child: Row(
+                    child: const Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Text("October"),
@@ -55,37 +66,61 @@ class ScheduleAppointmentCalendarScreen extends StatelessWidget {
                       ],
                     ),
                   ),
-                  Gap(kPadding16),
+                  const Gap(kPadding16),
                   Row(
                     children: [
-                      Text("This Week"),
-                      Spacer(),
+                      const Text("This Week"),
+                      const Spacer(),
                       IconButton(
                           onPressed: () {},
-                          icon: Icon(FluentIcons.chevron_left_24_regular)),
-                      Gap(kPadding8),
+                          icon:
+                              const Icon(FluentIcons.chevron_left_24_regular)),
+                      const Gap(kPadding8),
                       IconButton(
                           onPressed: () {},
-                          icon: Icon(FluentIcons.chevron_right_24_regular)),
+                          icon:
+                              const Icon(FluentIcons.chevron_right_24_regular)),
                     ],
                   ),
-                  Gap(kPadding8),
+                  const Gap(kPadding8),
                   CalendarWeekDaySelector(selectedDay: (selectedDay) {
                     print(selectedDay);
+
+                    setState(() {
+                      _selectedDay = selectedDay;
+                    });
                   }),
-                  Gap(kPadding16),
+                  const Gap(kPadding16),
                   Text(
-                    "Tuesday, Oct 03, 2024",
+                    "$_selectedDay, Oct 03, 2024",
                     style: theme.textTheme.headlineSmall!.copyWith(
                         color: theme.colorScheme.primary,
                         fontFamily: "Plus Jakarta Sans"),
                   ),
-                  const Gap(kPadding64),
                 ],
               ),
             ),
-          )
-        ],
+            SizedBox(
+              height: MediaQuery.sizeOf(context).height * .7,
+              child: DayView(
+                scrollPhysics: const NeverScrollableScrollPhysics(),
+                backgroundColor: theme.scaffoldBackgroundColor,
+                dayTitleBuilder: (DateTime now) {
+                  return const SizedBox.shrink();
+                },
+                verticalLineOffset: 0,
+                timeLineOffset: 5,
+                minuteSlotSize: MinuteSlotSize.minutes30,
+                liveTimeIndicatorSettings:
+                    LiveTimeIndicatorSettings(color: theme.colorScheme.primary),
+                startHour: 3,
+                hourIndicatorSettings: const HourIndicatorSettings(
+                    color: ZonerColors.purple90, offset: 4),
+                heightPerMinute: 1,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
