@@ -4,6 +4,8 @@ import 'package:zoner/core/core.dart';
 import 'package:zoner/core/routes.dart';
 import 'package:zoner/screens/patient/consultation/schedule_appointment_calendar_screen.dart';
 
+import 'screens/patient/consultation/doctor_profile_screen.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -28,7 +30,7 @@ class MyApp extends StatelessWidget {
             duration: const Duration(milliseconds: 300),
           ),
           //  routerConfig: appRouter.router,
-          home: const ScheduleAppointmentCalendarScreen()),
+          home: const DoctorProfileScreen()),
     );
   }
 }
