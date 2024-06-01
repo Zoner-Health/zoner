@@ -132,7 +132,7 @@ class ZonerButton extends StatelessWidget {
                 style: Theme.of(context)
                     .textTheme
                     .bodyMedium!
-                    .copyWith(color: labelColor)),
+                    .copyWith(color: labelColor, fontWeight: FontWeight.w600)),
             Visibility(
               visible: trailingIcon != null || trailingIconPath != null,
               child: Row(

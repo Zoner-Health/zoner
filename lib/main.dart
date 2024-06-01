@@ -2,7 +2,6 @@ import 'package:calendar_view/calendar_view.dart';
 import 'package:flutter/material.dart';
 import 'package:zoner/core/core.dart';
 import 'package:zoner/core/routes.dart';
-import 'package:zoner/screens/patient/consultation/schedule_appointment_calendar_screen.dart';
 
 import 'screens/patient/consultation/doctor_profile_screen.dart';
 
