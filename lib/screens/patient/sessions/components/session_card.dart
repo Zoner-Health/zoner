@@ -1,10 +1,10 @@
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:zoner/screens/patient/sessions/components/double_avatar.dart';
 
 import '../../../../core/core.dart';
 import '../../../components_global/components.dart';
+import 'double_avatar.dart';
 
 enum SessionState { request, ongoing, completed }
 
@@ -40,16 +40,21 @@ class SessionCard extends StatelessWidget {
     }
 
     return Container(
+      width: MediaQuery.sizeOf(context).width * .9,
       padding: const EdgeInsets.all(kPadding16),
       decoration: sessionDecoration,
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const DoubleAvatar(
             imagePath1: "assets/images/memoji.png",
             imagePath2: "assets/images/memoji.jpg",
           ),
           const Gap(kPadding8),
-          const Text("Session with Dr Lucy"),
+          Visibility(
+              visible: sessionState == SessionState.request,
+              child: const Text("Session with Dr Lucy")),
+          const Gap(kPadding8),
           Visibility(
             visible: sessionState == SessionState.request,
             replacement: Row(
@@ -57,6 +62,7 @@ class SessionCard extends StatelessWidget {
               mainAxisSize: MainAxisSize.max,
               children: [
                 Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Text(
@@ -77,13 +83,13 @@ class SessionCard extends StatelessWidget {
                     )
                   ],
                 ),
-                const Gap(kPadding16),
-                FittedBox(
-                  child: ZonerButton(
-                      onPressed: () {
-                        ///Todo: View Session Details
-                      },
-                      label: "View"),
+                const Spacer(),
+                ZonerButton(
+                  onPressed: () {
+                    ///Todo: View Session Details
+                  },
+                  label: "View",
+                  isChipButton: true,
                 ),
               ],
             ),
@@ -98,6 +104,7 @@ class SessionCard extends StatelessWidget {
                       onPressed: () {
                         ///Todo: Decline session request
                       },
+                      isChipButton: true,
                       label: "Decline"),
                 ),
                 const Gap(kPadding16),
@@ -107,6 +114,7 @@ class SessionCard extends StatelessWidget {
                       onPressed: () {
                         ///Todo: Decline session request
                       },
+                      isChipButton: true,
                       label: "Approve"),
                 ),
               ],

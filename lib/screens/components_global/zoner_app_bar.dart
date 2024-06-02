@@ -24,7 +24,7 @@ class ZonerAppBar extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisSize: MainAxisSize.min,
       children: [
-        const Gap(48),
+        const Gap(64),
         Row(
           children: [
             Visibility(
@@ -38,7 +38,7 @@ class ZonerAppBar extends StatelessWidget {
                   ),
                   padding: EdgeInsets.zero,
                   onPressed: () {},
-                  icon: const Icon(FluentIcons.chevron_left_24_regular)),
+                  icon: const Icon(FluentIcons.chevron_left_24_filled)),
             ),
             const Spacer(),
             Visibility(
@@ -47,27 +47,21 @@ class ZonerAppBar extends StatelessWidget {
                 children: actions ?? [],
               ),
             ),
-            Visibility(
-              visible: actions != null ? true : false,
-              child: IconButton.filled(
-                  style: IconButton.styleFrom(
-                    backgroundColor: isDarkMode
-                        ? ZonerColors.neutral20
-                        : ZonerColors.neutral95,
-                    elevation: 0,
-                  ),
-                  padding: EdgeInsets.zero,
-                  onPressed: () {},
-                  icon: const Icon(FluentIcons.list_rtl_20_regular)),
-            ),
+            IconButton.filled(
+                style: IconButton.styleFrom(
+                  backgroundColor: isDarkMode
+                      ? ZonerColors.neutral20
+                      : ZonerColors.neutral95,
+                  elevation: 0,
+                ),
+                padding: EdgeInsets.zero,
+                onPressed: () {},
+                icon: const Icon(FluentIcons.list_rtl_20_filled)),
           ],
         ),
         Visibility(
           visible: showTitle!,
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16),
-            child: Text(pageTitle, style: theme.textTheme.displaySmall),
-          ),
+          child: Text(pageTitle, style: theme.textTheme.displaySmall),
         ),
         const Gap(32),
       ],

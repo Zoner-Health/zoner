@@ -12,6 +12,18 @@ class ZonerThemeData {
     scaffoldBackgroundColor: ZonerColors.white,
     iconTheme: const IconThemeData(color: ZonerColors.black),
     primaryIconTheme: const IconThemeData(color: ZonerColors.black),
+    expansionTileTheme: ExpansionTileThemeData(
+      shape: RoundedRectangleBorder(
+        side: const BorderSide(width: 1, color: ZonerColors.neutral90),
+        borderRadius: BorderRadius.circular(kPadding24),
+      ),
+      collapsedShape: RoundedRectangleBorder(
+        side: const BorderSide(width: 1, color: ZonerColors.neutral90),
+        borderRadius: BorderRadius.circular(kPadding16),
+      ),
+      childrenPadding: const EdgeInsets.only(
+          left: kPadding16, right: kPadding16, bottom: kPadding8),
+    ),
     cardTheme: CardTheme(
       color: ZonerColors.purple95,
       elevation: 0,
@@ -140,6 +152,18 @@ class ZonerThemeData {
     scaffoldBackgroundColor: ZonerColors.black,
     iconTheme: const IconThemeData(color: ZonerColors.white),
     primaryIconTheme: const IconThemeData(color: ZonerColors.white),
+    expansionTileTheme: ExpansionTileThemeData(
+      shape: RoundedRectangleBorder(
+        side: const BorderSide(width: 1, color: ZonerColors.neutral20),
+        borderRadius: BorderRadius.circular(kPadding24),
+      ),
+      collapsedShape: RoundedRectangleBorder(
+        side: const BorderSide(width: 1, color: ZonerColors.neutral20),
+        borderRadius: BorderRadius.circular(kPadding16),
+      ),
+      childrenPadding: const EdgeInsets.only(
+          left: kPadding16, right: kPadding16, bottom: kPadding8),
+    ),
     switchTheme: SwitchThemeData(
       thumbColor: WidgetStateProperty.resolveWith((states) {
         if (states.contains(WidgetState.selected)) {

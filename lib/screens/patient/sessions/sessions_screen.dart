@@ -13,73 +13,87 @@ class SessionsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final ThemeData theme = Theme.of(context);
     return Scaffold(
-      body: Column(
-        children: [
-          const ZonerAppBar(pageTitle: "Sessions"),
-          const Gap(48),
-          Padding(
-            padding: const EdgeInsets.only(left: kPadding16),
-            child: Text(
-              "Session Requests",
-              style: theme.textTheme.titleMedium,
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: kPadding16),
+              child: ZonerAppBar(pageTitle: "Sessions"),
             ),
-          ),
-          const Gap(kPadding16),
-          ListView.separated(
-              shrinkWrap: true,
-              scrollDirection: Axis.horizontal,
-              separatorBuilder: (context, index) {
-                return const Gap(kPadding16);
-              },
-              itemCount: 3,
-              itemBuilder: (context, index) {
-                return const SessionCard(
-                  sessionState: SessionState.request,
-                );
-              }),
-          const Gap(kPadding24),
-          Padding(
-            padding: const EdgeInsets.only(left: kPadding16),
-            child: Text(
-              "Ongoing Sessions",
-              style: theme.textTheme.titleMedium,
+            Padding(
+              padding: const EdgeInsets.only(left: kPadding16),
+              child: Text(
+                "Session Requests",
+                style: theme.textTheme.titleLarge,
+              ),
             ),
-          ),
-          const Gap(kPadding16),
-          ListView.separated(
-              shrinkWrap: true,
-              scrollDirection: Axis.horizontal,
-              separatorBuilder: (context, index) {
-                return const Gap(kPadding16);
-              },
-              itemCount: 3,
-              itemBuilder: (context, index) {
-                return const SessionCard(
-                  sessionState: SessionState.ongoing,
-                );
-              }),
-          const Gap(kPadding24),
-          Padding(
-            padding: const EdgeInsets.only(left: kPadding16),
-            child: Text(
-              "Previous Sessions",
-              style: theme.textTheme.titleMedium,
+            const Gap(kPadding16),
+            SizedBox(
+              height: 185,
+              child: ListView.separated(
+                  padding: const EdgeInsets.symmetric(horizontal: kPadding16),
+                  scrollDirection: Axis.horizontal,
+                  separatorBuilder: (context, index) {
+                    return const Gap(kPadding16);
+                  },
+                  itemCount: 3,
+                  itemBuilder: (context, index) {
+                    return const SessionCard(
+                      sessionState: SessionState.request,
+                    );
+                  }),
             ),
-          ),
-          const Gap(kPadding16),
-          ListView.separated(
-              shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
-              separatorBuilder: (context, index) {
-                return const Gap(kPadding16);
-              },
-              itemCount: 3,
-              itemBuilder: (context, index) {
-                return const SessionCard(
-                  sessionState: SessionState.completed,
-                );
-              }),
-        ],
+            const Gap(kPadding24),
+            Padding(
+              padding: const EdgeInsets.only(left: kPadding16),
+              child: Text(
+                "Ongoing Sessions",
+                style: theme.textTheme.titleLarge,
+              ),
+            ),
+            const Gap(kPadding16),
+            SizedBox(
+              height: 166,
+              child: ListView.separated(
+                  padding: const EdgeInsets.symmetric(horizontal: kPadding16),
+                  scrollDirection: Axis.horizontal,
+                  separatorBuilder: (context, index) {
+                    return const Gap(kPadding16);
+                  },
+                  itemCount: 3,
+                  itemBuilder: (context, index) {
+                    return const SessionCard(
+                      sessionState: SessionState.ongoing,
+                    );
+                  }),
+            ),
+            const Gap(kPadding24),
+            Padding(
+              padding: const EdgeInsets.only(left: kPadding16),
+              child: Text(
+                "Previous Sessions",
+                style: theme.textTheme.titleLarge,
+              ),
+            ),
+            const Gap(kPadding16),
+            ListView.separated(
+                padding: const EdgeInsets.symmetric(horizontal: kPadding16),
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                separatorBuilder: (context, index) {
+                  return const Gap(kPadding16);
+                },
+                itemCount: 3,
+                itemBuilder: (context, index) {
+                  return const SessionCard(
+                    sessionState: SessionState.completed,
+                  );
+                }),
+            const Gap(kPadding64),
+          ],
+        ),
       ),
     );
   }

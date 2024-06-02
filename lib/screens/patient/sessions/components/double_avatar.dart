@@ -13,21 +13,17 @@ class DoubleAvatar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(
+      clipBehavior: Clip.none,
       children: [
-        Positioned(
-          top: 0,
-          left: 0,
-          child: CircleAvatar(
-            backgroundImage: AssetImage(imagePath1),
-            radius: 48,
-          ),
+        CircleAvatar(
+          backgroundImage: AssetImage(imagePath1),
+          radius: 38,
         ),
         Positioned(
-          top: 0,
-          left: 64,
+          left: 38,
           child: CircleAvatar(
             backgroundImage: AssetImage(imagePath2),
-            radius: 48,
+            radius: 38,
           ),
         ),
       ],
