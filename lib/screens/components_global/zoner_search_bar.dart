@@ -16,6 +16,7 @@ class ZonerSearchBar extends StatelessWidget {
         hintText: hintText ?? "Search",
         prefixIcon: const Icon(
           FluentIcons.search_24_regular,
+          color: ZonerColors.neutral50,
           size: 24,
         ),
         errorBorder: OutlineInputBorder(
@@ -41,7 +42,8 @@ class ZonerSearchBar extends StatelessWidget {
         ),
         focusedBorder: OutlineInputBorder(
           gapPadding: 0,
-          borderSide: const BorderSide(width: 1, color: ZonerColors.purple60),
+          borderSide: BorderSide(
+              width: 1, color: Theme.of(context).colorScheme.primary),
           borderRadius: BorderRadius.circular(32),
         ),
       ),

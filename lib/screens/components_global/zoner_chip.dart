@@ -64,8 +64,7 @@ class _ZonerChipState extends State<ZonerChip> {
               size: 16,
               color: isSelected ? theme.scaffoldBackgroundColor : null,
             ),
-            // onDeleted: widget.onDeleted,
-            onDeleted: () {},
+            onDeleted: widget.onDeleted,
             selectedColor:
                 widget.selectedBackgroundColor ?? theme.colorScheme.primary,
             backgroundColor: theme.scaffoldBackgroundColor,
@@ -111,7 +110,8 @@ class _ZonerChipState extends State<ZonerChip> {
               widget.onSelected!.call(value);
             })
         : Chip(
-            backgroundColor: theme.scaffoldBackgroundColor,
+            backgroundColor:
+                widget.selectedBackgroundColor ?? theme.scaffoldBackgroundColor,
             side: BorderSide(
                 color:
                     isDarkMode ? ZonerColors.neutral20 : ZonerColors.neutral90),
