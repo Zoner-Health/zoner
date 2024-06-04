@@ -2,7 +2,7 @@ import 'package:calendar_view/calendar_view.dart';
 import 'package:flutter/material.dart';
 import 'package:zoner/core/core.dart';
 import 'package:zoner/core/routes.dart';
-import 'package:zoner/screens/patient/home/home_screen.dart';
+import 'package:zoner/screens/patient/discover/discover_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
             duration: const Duration(milliseconds: 300),
           ),
           //  routerConfig: appRouter.router,
-          home: const HomeScreen()),
+          home: const DiscoverScreen()),
     );
   }
 }

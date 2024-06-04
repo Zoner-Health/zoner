@@ -73,7 +73,7 @@ class DoctorSearchResultCard extends StatelessWidget {
           ),
           const Gap(kPadding8),
           ZonerChip(
-            color: theme.colorScheme.primary,
+            selectedColor: theme.colorScheme.primary,
             chipType: AppChipType.info,
             label: "Bamenda Regional Hospital",
             iconPath: "assets/svg/hospital-filled.svg",

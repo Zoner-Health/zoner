@@ -14,7 +14,10 @@ class ZonerSearchBar extends StatelessWidget {
       controller: controller,
       decoration: ZonerInputDecoration.inputDecoration(context).copyWith(
         hintText: hintText ?? "Search",
-        prefixIcon: const Icon(FluentIcons.search_24_regular),
+        prefixIcon: const Icon(
+          FluentIcons.search_24_regular,
+          size: 24,
+        ),
         errorBorder: OutlineInputBorder(
           gapPadding: 4,
           borderSide:
