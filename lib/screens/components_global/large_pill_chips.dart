@@ -17,31 +17,41 @@ class LargePillChips extends StatelessWidget {
     final ThemeData theme = Theme.of(context);
     final bool isDarkMode = theme.brightness == Brightness.dark;
 
-    return Container(
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(kPadding48),
-          border: Border.all(
-              width: 1,
-              color: color ??
-                  (isDarkMode
-                      ? ZonerColors.neutral20
-                      : ZonerColors.neutral90))),
-      padding: const EdgeInsets.symmetric(
-          vertical: kPadding24, horizontal: kPadding32),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          ZonerIcon(
-            iconPath: iconPath,
-            icon: icon,
-            color: color,
-          ),
-          const Gap(4),
-          Text(
-            label,
-            style: theme.textTheme.bodyMedium!.copyWith(color: color),
-          ),
-        ],
+    return FittedBox(
+      child: Container(
+        //  height: 80,
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(kPadding48),
+            border: Border.all(
+                width: 1,
+                color: color ??
+                    (isDarkMode
+                        ? ZonerColors.neutral20
+                        : ZonerColors.neutral90))),
+        padding: const EdgeInsets.symmetric(
+            vertical: kPadding24, horizontal: kPadding32),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Visibility(
+              visible: icon != null || iconPath != null,
+              child: Row(
+                children: [
+                  ZonerIcon(
+                    iconPath: iconPath,
+                    icon: icon,
+                    color: color,
+                  ),
+                  const Gap(4),
+                ],
+              ),
+            ),
+            Text(
+              label,
+              style: theme.textTheme.bodyMedium!.copyWith(color: color),
+            ),
+          ],
+        ),
       ),
     );
   }

@@ -112,9 +112,12 @@ class _ZonerChipState extends State<ZonerChip> {
         : Chip(
             backgroundColor:
                 widget.selectedBackgroundColor ?? theme.scaffoldBackgroundColor,
-            side: BorderSide(
-                color:
-                    isDarkMode ? ZonerColors.neutral20 : ZonerColors.neutral90),
+            side: widget.selectedBackgroundColor == null
+                ? BorderSide(
+                    color: isDarkMode
+                        ? ZonerColors.neutral20
+                        : ZonerColors.neutral90)
+                : null,
             padding: EdgeInsets.only(
               top: kPadding12,
               bottom: kPadding12,
@@ -135,6 +138,7 @@ class _ZonerChipState extends State<ZonerChip> {
                         size: 16,
                         iconPath: widget.iconPath,
                         icon: widget.icon,
+                        color: widget.selectedColor,
                       ),
                       const Gap(kPadding8),
                     ],
@@ -142,7 +146,8 @@ class _ZonerChipState extends State<ZonerChip> {
                 ),
                 Text(
                   widget.label,
-                  style: theme.textTheme.bodyMedium,
+                  style: theme.textTheme.bodyMedium!
+                      .copyWith(color: widget.selectedColor),
                 ),
               ],
             ),
