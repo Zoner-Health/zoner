@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
             duration: const Duration(milliseconds: 300),
           ),
           //  routerConfig: appRouter.router,
-          home: ScanQrScreen()),
+          home: const ScanQrScreen()),
     );
   }
 }
