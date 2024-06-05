@@ -16,6 +16,7 @@ final List<String> facilities = [
 ];
 
 class HospitalDetailsScreen extends StatelessWidget {
+  static const String id = "hospital_details";
   const HospitalDetailsScreen({super.key});
 
   @override
@@ -100,7 +101,7 @@ class HospitalDetailsScreen extends StatelessWidget {
                   Row(
                     children: [
                       ZonerIcon(
-                        icon: FluentIcons.clock_24_filled,
+                        icon: FluentIcons.clock_24_regular,
                         color: theme.colorScheme.primary,
                       ),
                       const Gap(kPadding8),
@@ -151,7 +152,8 @@ class HospitalDetailsScreen extends StatelessWidget {
                                 ),
                               ),
                             ),
-                        separatorBuilder: (context, index) => const Gap(kPadding16)),
+                        separatorBuilder: (context, index) =>
+                            const Gap(kPadding16)),
                   )
                 ],
               ),
@@ -193,7 +195,8 @@ class HospitalDetailsScreen extends StatelessWidget {
                                 color: theme.colorScheme.primary,
                               ),
                             ),
-                        separatorBuilder: (context, index) => const Gap(kPadding16)),
+                        separatorBuilder: (context, index) =>
+                            const Gap(kPadding16)),
                   ),
                 ],
               ),

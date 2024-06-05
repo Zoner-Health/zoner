@@ -4,7 +4,7 @@ import 'package:gap/gap.dart';
 
 import '../../../../core/core.dart';
 import '../../../components_global/components.dart';
-import 'components.dart';
+import '../../consultation/components/components.dart';
 
 class DoctorSearchResultCard extends StatelessWidget {
   const DoctorSearchResultCard({super.key});
