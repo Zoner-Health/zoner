@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:zoner/core/constants.dart';
 
+import 'components/message_bubbles.dart';
+
 class ChatScreen extends StatelessWidget {
   const ChatScreen({super.key});
 
@@ -15,7 +17,7 @@ class ChatScreen extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: kPadding16),
         child: Column(
           children: [
-            Gap(kPadding24),
+            const Gap(kPadding64),
             Row(
               children: [
                 IconButton.filled(
@@ -24,101 +26,58 @@ class ChatScreen extends StatelessWidget {
                             ? ZonerColors.neutral20
                             : ZonerColors.neutral95),
                     onPressed: () {},
-                    icon: Icon(FluentIcons.chevron_down_24_regular)),
-                Spacer(),
+                    icon: const Icon(FluentIcons.chevron_left_24_regular)),
+                const Spacer(),
                 IconButton.filled(
                     style: IconButton.styleFrom(
                         backgroundColor: isDarkMode
                             ? ZonerColors.neutral20
                             : ZonerColors.neutral95),
                     onPressed: () {},
-                    icon: Icon(FluentIcons.video_24_regular)),
+                    icon: const Icon(FluentIcons.video_24_regular)),
                 IconButton.filled(
                     style: IconButton.styleFrom(
                         backgroundColor: isDarkMode
                             ? ZonerColors.neutral20
                             : ZonerColors.neutral95),
                     onPressed: () {},
-                    icon: Icon(FluentIcons.call_24_regular)),
+                    icon: const Icon(FluentIcons.call_24_regular)),
                 IconButton.filled(
                     style: IconButton.styleFrom(
                         backgroundColor: isDarkMode
                             ? ZonerColors.neutral20
                             : ZonerColors.neutral95),
                     onPressed: () {},
-                    icon: Icon(FluentIcons.list_rtl_20_regular)),
+                    icon: const Icon(FluentIcons.list_rtl_20_regular)),
               ],
             ),
-            Gap(kPadding16),
+            const Gap(kPadding8),
             Row(
               children: [
-                CircleAvatar(
+                const CircleAvatar(
                   backgroundImage: AssetImage("assets/images/memoji.jpg"),
-                  radius: 24,
+                  radius: 32,
                 ),
-                Gap(kPadding12),
+                const Gap(kPadding12),
                 Text("Dr Lucy Lu", style: theme.textTheme.titleMedium),
               ],
             ),
-            Gap(kPadding24),
-            CustomScrollView(
-              slivers: [
-                SliverList.builder(
-                  itemBuilder: (context, index) => _buildMessageBubble(
-                      'Yorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate?',
-                      true),
-                  itemCount: 5,
-                )
-              ],
-            ),
+            const Gap(kPadding24),
             Expanded(
-              child: ListView(
-                padding: EdgeInsets.all(16.0),
-                children: [
-                  _buildMessageBubble(
-                    'Yorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate?',
-                    false,
-                  ),
-                  _buildMessageBubble(
-                    'Yorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate?',
-                    true,
-                  ),
-                  _buildMessageBubble(
-                    'Yorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate?',
-                    true,
-                  ),
-                  _buildImageMessage(
-                      'https://example.com/image1.jpg'), // Replace with actual image URL
-                  _buildMessageBubble(
-                    'Yorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate?',
-                    true,
-                  ),
-                  _buildVoiceMessage(),
-                  _buildImageMessage(
-                      'https://example.com/image2.jpg'), // Replace with actual image URL
+              child: CustomScrollView(
+                slivers: [
+                  SliverList.builder(
+                    itemBuilder: (context, index) => TextMessageBubble(
+                      replyingMessage: "Replied to this message",
+                      message: 'Yorem ipsum dolor sit',
+                    ),
+                    itemCount: 3,
+                  )
                 ],
               ),
             ),
-            MessageFormField(),
+            const MessageFormField(),
           ],
-        ),
-      ),
-    );
-  }
-
-  Widget _buildMessageBubble(String message, bool isReceived) {
-    return Align(
-      alignment: isReceived ? Alignment.centerLeft : Alignment.centerRight,
-      child: Container(
-        padding: EdgeInsets.all(12),
-        margin: EdgeInsets.symmetric(vertical: 4),
-        decoration: BoxDecoration(
-          color: isReceived ? Colors.purple.shade50 : Colors.grey.shade200,
-          borderRadius: BorderRadius.circular(12),
-        ),
-        child: Text(
-          message,
-          style: TextStyle(fontSize: 16),
         ),
       ),
     );
@@ -146,8 +105,8 @@ class ChatScreen extends StatelessWidget {
       alignment: Alignment.centerRight,
       child: Container(
         width: 250,
-        padding: EdgeInsets.all(12),
-        margin: EdgeInsets.symmetric(vertical: 4),
+        padding: const EdgeInsets.all(12),
+        margin: const EdgeInsets.symmetric(vertical: 4),
         decoration: BoxDecoration(
           color: Colors.grey.shade200,
           borderRadius: BorderRadius.circular(12),
@@ -156,7 +115,7 @@ class ChatScreen extends StatelessWidget {
           children: [
             Row(
               children: [
-                Icon(Icons.play_arrow, color: Colors.purple),
+                const Icon(Icons.play_arrow, color: Colors.purple),
                 Expanded(
                   child: Slider(
                     value: 0.5,
@@ -165,7 +124,7 @@ class ChatScreen extends StatelessWidget {
                     inactiveColor: Colors.purple.shade100,
                   ),
                 ),
-                Text('00:23'),
+                const Text('00:23'),
               ],
             ),
           ],
@@ -191,7 +150,7 @@ class MessageFormField extends StatelessWidget {
                     .copyWith(hintText: "Write a message")),
           ),
           IconButton(
-            icon: Icon(
+            icon: const Icon(
               FluentIcons.attach_20_regular,
             ),
             onPressed: () {
@@ -199,7 +158,7 @@ class MessageFormField extends StatelessWidget {
             },
           ),
           IconButton(
-            icon: Icon(
+            icon: const Icon(
               FluentIcons.camera_20_regular,
             ),
             onPressed: () {
@@ -207,7 +166,7 @@ class MessageFormField extends StatelessWidget {
             },
           ),
           IconButton(
-            icon: Icon(
+            icon: const Icon(
               FluentIcons.mic_20_regular,
             ),
             onPressed: () {
@@ -217,7 +176,7 @@ class MessageFormField extends StatelessWidget {
           IconButton.filled(
             style: IconButton.styleFrom(
               backgroundColor: theme.colorScheme.primary,
-              fixedSize: Size.square(48),
+              fixedSize: const Size.square(48),
             ),
             icon: Icon(
               FluentIcons.send_24_filled,
