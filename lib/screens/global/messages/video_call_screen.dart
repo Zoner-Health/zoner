@@ -1,7 +1,10 @@
+import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 import 'package:zoner/core/constants.dart';
-import 'package:zoner/screens/components_global/components.dart';
-import 'package:zoner/screens/global/messages/audio_call_screen.dart';
+
+import 'components/call_controls.dart';
+import 'components/call_timer.dart';
 
 class VideoCallScreen extends StatelessWidget {
   const VideoCallScreen({super.key});
@@ -13,23 +16,57 @@ class VideoCallScreen extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          ZonerAppBar(),
-          CallTimer(),
-          Stack(
+          const Gap(kPadding64),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Container(
-                width: double.infinity,
-                decoration: BoxDecoration(
-                    color: ZonerColors.neutral20,
-                    borderRadius: BorderRadius.only(
-                        topRight: Radius.circular(kPadding24),
-                        topLeft: Radius.circular(kPadding24))),
-              ),
-              Positioned(
-                bottom: 64,
-                child: CallControls(),
-              ),
+              IconButton.filled(
+                  style: IconButton.styleFrom(
+                    backgroundColor: Colors.white.withOpacity(.2),
+                    elevation: 0,
+                  ),
+                  padding: EdgeInsets.zero,
+                  onPressed: () {},
+                  icon: const Icon(
+                    FluentIcons.chevron_left_24_filled,
+                    color: Colors.white,
+                  )),
+              const CallTimer(),
+              IconButton.filled(
+                  style: IconButton.styleFrom(
+                      backgroundColor: Colors.white.withOpacity(.2)),
+                  padding: EdgeInsets.zero,
+                  onPressed: () {},
+                  icon: const Icon(FluentIcons.list_rtl_20_filled,
+                      color: Colors.white)),
             ],
+          ),
+          const Gap(kPadding16),
+          Expanded(
+            child: Stack(
+              children: [
+                Container(
+                  width: MediaQuery.sizeOf(context).width,
+                  decoration: const BoxDecoration(
+                      color: ZonerColors.neutral20,
+                      borderRadius: BorderRadius.only(
+                          topRight: Radius.circular(kPadding32),
+                          topLeft: Radius.circular(kPadding32))),
+                ),
+                Positioned(
+                  bottom: 64,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SizedBox(
+                        width: MediaQuery.sizeOf(context).width,
+                      ),
+                      const FittedBox(child: CallControls()),
+                    ],
+                  ),
+                ),
+              ],
+            ),
           )
         ],
       ),
