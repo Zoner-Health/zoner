@@ -2,7 +2,7 @@ import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
-import 'package:zoner/core/core.dart';
+
 
 class ZonerAppBar extends StatelessWidget {
   final String? pageTitle;
@@ -41,6 +41,7 @@ class ZonerAppBar extends StatelessWidget {
                   onPressed: () {
                     context.pop();
                   },
+
                   icon: const Icon(FluentIcons.chevron_left_24_filled)),
             ),
             const Spacer(),

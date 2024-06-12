@@ -73,6 +73,7 @@ class SessionsScreen extends StatelessWidget {
                       onPressed: () {
                         context.pushNamed(SessionDetailsScreen.id);
                       },
+
                       sessionState: SessionState.ongoing,
                     );
                   }),
@@ -99,6 +100,7 @@ class SessionsScreen extends StatelessWidget {
                     onPressed: () {
                       context.pushNamed(SessionDetailsScreen.id);
                     },
+
                     sessionState: SessionState.completed,
                   );
                 }),

@@ -18,6 +18,7 @@ class SessionCard extends StatelessWidget {
       this.margin,
       required this.onPressed});
 
+
   @override
   Widget build(BuildContext context) {
     final ThemeData theme = Theme.of(context);
@@ -47,6 +48,7 @@ class SessionCard extends StatelessWidget {
 
     return Container(
       margin: margin,
+
       width: MediaQuery.sizeOf(context).width * .9,
       padding: const EdgeInsets.all(kPadding16),
       decoration: sessionDecoration,

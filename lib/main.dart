@@ -1,6 +1,5 @@
 import 'package:calendar_view/calendar_view.dart';
 import 'package:flutter/material.dart';
-
 import 'core/core.dart';
 import 'core/routes.dart';
 
@@ -30,6 +29,7 @@ class MyApp extends StatelessWidget {
         routerConfig: appRouter.router,
         //  home: const CheckoutMobileMoneyScreen()
       ),
+
     );
   }
 }
