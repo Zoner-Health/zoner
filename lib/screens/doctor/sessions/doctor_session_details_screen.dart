@@ -2,9 +2,9 @@ import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:zoner/core/core.dart';
-import 'package:zoner/screens/components_global/components.dart';
 import 'package:zoner/screens/doctor/sessions/components/add_medication_form.dart';
 import 'package:zoner/screens/patient/sessions/components/components.dart';
+import 'package:zoner/screens/shared/components_global/components.dart';
 
 class DoctorSessionDetailsScreen extends StatefulWidget {
   static const String id = "session_details";
@@ -227,7 +227,8 @@ class _DoctorSessionDetailsScreenState
                   ///Might just combine all into one
                   const SessionTestListItem(testName: "Thoracic CT Scan"),
                   const SessionTestListItem(testName: "Malaria"),
-                  const SessionTestListItem(testName: "Abdominal Endoplasmic Biopsy"),
+                  const SessionTestListItem(
+                      testName: "Abdominal Endoplasmic Biopsy"),
                 ],
               ),
               const Gap(kPadding64),

@@ -2,13 +2,13 @@ import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
-import 'package:zoner/screens/components_global/components.dart';
 import 'package:zoner/screens/patient/discover/find_doctors_screen.dart';
 import 'package:zoner/screens/patient/sessions/components/session_card.dart';
 import 'package:zoner/screens/patient/sessions/session_details_screen.dart';
 
 import '../../../core/core.dart';
 import '../../doctor/profile/components/components.dart';
+import '../../shared/components_global/components.dart';
 
 class HomeScreen extends StatelessWidget {
   static const String id = "home";

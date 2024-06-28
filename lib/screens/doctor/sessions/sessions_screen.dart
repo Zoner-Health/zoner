@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
 import 'package:zoner/core/core.dart';
-import 'package:zoner/screens/components_global/components.dart';
 import 'package:zoner/screens/patient/sessions/components/components.dart';
 import 'package:zoner/screens/patient/sessions/session_details_screen.dart';
+
+import '../../shared/components_global/components.dart';
 
 class DoctorSessionsScreen extends StatelessWidget {
   static const id = "doctor_session";

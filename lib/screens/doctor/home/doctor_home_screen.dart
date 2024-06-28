@@ -6,7 +6,7 @@ import 'package:zoner/screens/patient/sessions/components/session_card.dart';
 import 'package:zoner/screens/patient/sessions/session_details_screen.dart';
 
 import '../../../core/core.dart';
-import '../../components_global/components.dart';
+import '../../shared/components_global/components.dart';
 
 ///Todo: Will probably merge the homescreens into one,and use checks on UserType to display appropriate widgets
 class DoctorHomeScreen extends StatelessWidget {

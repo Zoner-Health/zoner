@@ -8,7 +8,7 @@ import 'package:zoner/screens/patient/discover/discover_screen.dart';
 import 'package:zoner/screens/patient/home/home_screen.dart';
 import 'package:zoner/screens/patient/sessions/sessions_screen.dart';
 
-import '../../core/constants.dart';
+import '../../../core/constants.dart';
 
 class BottomNavBar extends ConsumerStatefulWidget {
   static const String id = "nav_bar";
@@ -73,15 +73,15 @@ class _BottomNavBarState extends ConsumerState<BottomNavBar> {
                 )),
             NavigationDestination(
               label: "Sessions",
-              icon:
-                  const Icon(FluentIcons.clock_24_regular, color: ZonerColors.black),
+              icon: const Icon(FluentIcons.clock_24_regular,
+                  color: ZonerColors.black),
               selectedIcon: Icon(FluentIcons.clock_24_filled,
                   color: Theme.of(context).colorScheme.primary),
             ),
             NavigationDestination(
               label: "Discover",
-              icon:
-                  const Icon(FluentIcons.search_24_regular, color: ZonerColors.black),
+              icon: const Icon(FluentIcons.search_24_regular,
+                  color: ZonerColors.black),
               selectedIcon: Icon(FluentIcons.search_24_filled,
                   color: Theme.of(context).colorScheme.primary),
             ),

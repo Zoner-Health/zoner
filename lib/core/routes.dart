@@ -14,9 +14,9 @@ import 'package:zoner/screens/patient/discover/scan_qr_screen.dart';
 import 'package:zoner/screens/patient/sessions/session_details_screen.dart';
 import 'package:zoner/screens/patient/sessions/sessions_screen.dart';
 
-import '../screens/components_global/bottom_nav_bar.dart';
 import '../screens/patient/home/home_screen.dart';
 import '../screens/shared/auth/auth.dart';
+import '../screens/shared/components_global/components.dart';
 import '../screens/shared/messages/messages.dart';
 
 class AppRouter {
