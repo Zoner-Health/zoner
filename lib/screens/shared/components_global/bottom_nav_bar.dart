@@ -5,10 +5,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:zoner/screens/patient/discover/discover_screen.dart';
-import 'package:zoner/screens/patient/home/home_screen.dart';
 import 'package:zoner/screens/patient/sessions/sessions_screen.dart';
 
 import '../../../core/constants.dart';
+import '../home/home_screen.dart';
 
 class BottomNavBar extends ConsumerStatefulWidget {
   static const String id = "nav_bar";

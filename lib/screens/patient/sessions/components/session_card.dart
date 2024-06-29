@@ -47,7 +47,7 @@ class SessionCard extends StatelessWidget {
 
     return Container(
       margin: margin,
-      width: MediaQuery.sizeOf(context).width * .9,
+      width: MediaQuery.sizeOf(context).width * .8,
       padding: const EdgeInsets.all(kPadding16),
       decoration: sessionDecoration,
       child: Column(

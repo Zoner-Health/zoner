@@ -5,8 +5,8 @@ import 'package:go_router/go_router.dart';
 import 'package:zoner/core/constants.dart';
 import 'package:zoner/screens/shared/components_global/components.dart';
 
-import '../../doctor/profile/components/components.dart';
 import '../../shared/messages/messages.dart';
+import 'components/components.dart';
 
 class DoctorProfileScreen extends StatelessWidget {
   static const String id = "doctor_profile";
