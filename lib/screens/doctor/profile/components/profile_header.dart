@@ -8,19 +8,21 @@ import '../../../../core/core.dart';
 
 class ProfileHeader extends StatelessWidget {
   final String name;
-  final String title;
+  final String? title;
   final VoidCallback? onVideoCallPressed;
   final VoidCallback? onAudioCallPressed;
   final VoidCallback? onMessagePressed;
+  final bool showActions;
   final ImageProvider backgroundImage;
   final ImageProvider profileImage;
   const ProfileHeader(
       {super.key,
       required this.name,
-      required this.title,
+      this.title,
       this.onVideoCallPressed,
       this.onMessagePressed,
       this.onAudioCallPressed,
+      this.showActions = false,
       required this.backgroundImage,
       required this.profileImage});
 
@@ -60,48 +62,62 @@ class ProfileHeader extends StatelessWidget {
                     name,
                     style: theme.textTheme.titleLarge,
                   ),
-                  const Gap(kPadding4),
-                  Text(
-                    title,
-                    style: theme.textTheme.bodyMedium!
-                        .copyWith(color: ZonerColors.neutral50),
+                  Visibility(
+                    visible: title != null,
+                    child: Column(
+                      children: [
+                        const Gap(kPadding4),
+                        Text(
+                          title ?? "",
+                          style: theme.textTheme.bodyMedium!
+                              .copyWith(color: ZonerColors.neutral50),
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),
               const Spacer(),
-              IconButton.filled(
-                  onPressed: onAudioCallPressed,
-                  style: IconButton.styleFrom(
-                    backgroundColor: theme.cardColor,
-                    fixedSize: const Size.square(48),
-                  ),
-                  icon: Icon(FluentIcons.call_24_regular,
-                      color: theme.colorScheme.primary)),
-              const Gap(kPadding8),
-              IconButton.filled(
-                onPressed: onVideoCallPressed,
-                style: IconButton.styleFrom(
-                  backgroundColor: theme.cardColor,
-                  fixedSize: const Size.square(48),
+              Visibility(
+                visible: showActions,
+                child: Row(
+                  children: [
+                    IconButton.filled(
+                        onPressed: onAudioCallPressed,
+                        style: IconButton.styleFrom(
+                          backgroundColor: theme.cardColor,
+                          fixedSize: const Size.square(48),
+                        ),
+                        icon: Icon(FluentIcons.call_24_regular,
+                            color: theme.colorScheme.primary)),
+                    const Gap(kPadding8),
+                    IconButton.filled(
+                      onPressed: onVideoCallPressed,
+                      style: IconButton.styleFrom(
+                        backgroundColor: theme.cardColor,
+                        fixedSize: const Size.square(48),
+                      ),
+                      icon: SvgPicture.asset(
+                        "assets/svg/video-camera.svg",
+                        colorFilter: ColorFilter.mode(
+                            theme.colorScheme.primary, BlendMode.srcIn),
+                      ),
+                    ),
+                    const Gap(kPadding8),
+                    IconButton.filled(
+                      onPressed: onMessagePressed,
+                      style: IconButton.styleFrom(
+                        backgroundColor: theme.cardColor,
+                        fixedSize: const Size.square(48),
+                      ),
+                      icon: Icon(
+                        FluentIcons.chat_24_regular,
+                        color: theme.colorScheme.primary,
+                      ),
+                    ),
+                  ],
                 ),
-                icon: SvgPicture.asset(
-                  "assets/svg/video-camera.svg",
-                  colorFilter: ColorFilter.mode(
-                      theme.colorScheme.primary, BlendMode.srcIn),
-                ),
-              ),
-              const Gap(kPadding8),
-              IconButton.filled(
-                onPressed: onMessagePressed,
-                style: IconButton.styleFrom(
-                  backgroundColor: theme.cardColor,
-                  fixedSize: const Size.square(48),
-                ),
-                icon: Icon(
-                  FluentIcons.chat_24_regular,
-                  color: theme.colorScheme.primary,
-                ),
-              ),
+              )
             ],
           ),
         ),

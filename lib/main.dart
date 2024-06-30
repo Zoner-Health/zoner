@@ -1,9 +1,9 @@
 import 'package:calendar_view/calendar_view.dart';
 import 'package:flutter/material.dart';
-import 'package:zoner/screens/shared/home/home_screen.dart';
 
 import 'core/core.dart';
 import 'core/routes.dart';
+import 'screens/patient/profile/medication_booklet_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
           duration: const Duration(milliseconds: 300),
         ),
         // routerConfig: appRouter.router,
-        home: const HomeScreen(),
+        home: const MedicationBookletScreen(),
       ),
     );
   }

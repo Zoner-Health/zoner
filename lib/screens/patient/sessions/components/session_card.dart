@@ -6,7 +6,7 @@ import '../../../../core/core.dart';
 import '../../../shared/components_global/components.dart';
 import 'double_avatar.dart';
 
-enum SessionState { request, ongoing, completed }
+enum SessionState { request, ongoing, completed, closed }
 
 class SessionCard extends StatelessWidget {
   final SessionState sessionState;
