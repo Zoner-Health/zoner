@@ -16,7 +16,7 @@ class PatientProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final ThemeData theme = Theme.of(context);
-    final bool isDarkMode = theme.brightness == Brightness.dark;
+    // final bool isDarkMode = theme.brightness == Brightness.dark;
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(

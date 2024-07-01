@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:zoner/screens/doctor/sessions/components/custom_frequency_dialog.dart';
 
 import '../../../../core/core.dart';
 import '../../../shared/components_global/components.dart';
+import 'custom_dose_dialog.dart';
 
 class AddMedicationForm extends StatefulWidget {
   const AddMedicationForm({super.key});
@@ -27,7 +29,8 @@ class _AddMedicationFormState extends State<AddMedicationForm> {
     return Container(
       decoration: BoxDecoration(
         color: theme.scaffoldBackgroundColor,
-        borderRadius: const BorderRadius.vertical(top: Radius.circular(kPadding24)),
+        borderRadius:
+            const BorderRadius.vertical(top: Radius.circular(kPadding24)),
       ),
       padding: const EdgeInsets.symmetric(horizontal: kPadding16),
       child: Column(
@@ -48,30 +51,48 @@ class _AddMedicationFormState extends State<AddMedicationForm> {
           const Gap(kPadding16),
           const Text("Dose"),
           const Gap(kPadding16),
-          Wrap(
-            runSpacing: 6,
-            spacing: kPadding8,
-            children: List.generate(
-                5,
-                (context) => ZonerChip(
-                      onSelected: (isSelected) {},
-                      label: "200mg",
-                      chipType: AppChipType.filter,
-                    )),
-          ),
+          Wrap(runSpacing: 6, spacing: kPadding8, children: [
+            ...List.generate(
+              3,
+              (context) => ZonerChip(
+                onSelected: (isSelected) {},
+                label: "200mg",
+                chipType: AppChipType.filter,
+              ),
+            ),
+            ZonerChip(
+              onSelected: (isSelected) {
+                ///Show Alert Dialog
+                showAdaptiveDialog(
+                  context: context,
+                  builder: (context) => const CustomDoseDialog(),
+                );
+              },
+              label: "Custom",
+              chipType: AppChipType.filter,
+            ),
+          ]),
           const Gap(kPadding24),
           const Text("Frequency"),
-          Wrap(
-            runSpacing: 6,
-            spacing: kPadding8,
-            children: List.generate(
-                7,
+          Wrap(runSpacing: 6, spacing: kPadding8, children: [
+            ...List.generate(
+                3,
                 (context) => ZonerChip(
                       onSelected: (isSelected) {},
                       label: "Once a day",
                       chipType: AppChipType.filter,
                     )),
-          ),
+            ZonerChip(
+              onSelected: (isSelected) {
+                ///Show Alert Dialog
+                showAdaptiveDialog(
+                    context: context,
+                    builder: (context) => const CustomFrequencyDialog());
+              },
+              label: "Custom",
+              chipType: AppChipType.filter,
+            ),
+          ]),
           const Gap(kPadding24),
           const Text("Duration"),
           Padding(

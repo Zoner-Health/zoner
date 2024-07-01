@@ -55,6 +55,47 @@ class ZonerInputDecoration {
         labelStyle:
             ZonerTextStyles.bodyMedium.copyWith(color: ZonerColors.black));
   }
+
+  static InputDecorationTheme inputDecorationTheme(BuildContext context) {
+    return InputDecorationTheme(
+      constraints: const BoxConstraints(maxHeight: 48),
+      contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+      errorStyle: ZonerTextStyles.bodyMedium
+          .copyWith(color: Theme.of(context).colorScheme.error),
+      errorBorder: OutlineInputBorder(
+        gapPadding: 4,
+        borderSide:
+            BorderSide(color: Theme.of(context).colorScheme.error, width: 1),
+        borderRadius: BorderRadius.circular(12),
+      ),
+      border: OutlineInputBorder(
+        gapPadding: 0,
+        borderSide: BorderSide.none,
+        borderRadius: BorderRadius.circular(12),
+      ),
+      enabledBorder: OutlineInputBorder(
+        gapPadding: 0,
+        borderSide: BorderSide.none,
+        borderRadius: BorderRadius.circular(12),
+      ),
+      disabledBorder: OutlineInputBorder(
+        gapPadding: 0,
+        borderSide: BorderSide.none,
+        borderRadius: BorderRadius.circular(12),
+      ),
+      focusedBorder: OutlineInputBorder(
+        gapPadding: 0,
+        borderSide: const BorderSide(width: 1, color: ZonerColors.purple70),
+        borderRadius: BorderRadius.circular(12),
+      ),
+      filled: true,
+      isDense: true,
+      fillColor: Theme.of(context).brightness == Brightness.light
+          ? ZonerColors.neutral95
+          : ZonerColors.neutral20,
+      suffixIconColor: Theme.of(context).colorScheme.primary,
+    );
+  }
 }
 
 ///------Colors-------///
